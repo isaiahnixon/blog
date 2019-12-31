@@ -91,5 +91,6 @@ Add IPs for [public DNS](https://www.techradar.com/news/best-dns-server) of your
 - Add IPs for [public DNS](https://www.techradar.com/news/best-dns-server) of your choice. Again, I use Google’s (`2001:4860:4860::8888`, `2001:4860:4860::8844`).
 - Click the “Apply” button in the upper right-hand corner of the window.
 - Now, whenever you use your VPN, DNS will be handled by the service you chose.
+
 **Why:** Knowing that you are actually on the sites you think you are, is fundamental to your security online. This also helps lock in the benefits of browsing with a VPN.
 
