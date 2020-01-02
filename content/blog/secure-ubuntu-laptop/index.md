@@ -21,6 +21,7 @@ Credit: [mikewhatever](https://askubuntu.com/questions/1029285/ubuntu-18-04-disk
 **Caveats:**
 - If you need to dual boot, a more [advanced configuration is required](https://askubuntu.com/questions/1029285/ubuntu-18-04-disk-encryption).
 - Make a habit of shutting your computer down whenever it is not in use, this will trigger the encryption process each time and lock in the security benefits.
+
 **Why:** The physical security of a computer (especially a laptop) is impossible to guarantee, and I don’t want to stress about what files are on my drive at any given moment in time.
 
 ##Firewall
@@ -68,7 +69,7 @@ Credit: [@thucnc](https://medium.com/@thucnc/openvpn-on-ubuntu-18-04-3295cabf114
 **Caveats:**
 
 - A VPN connection can slow down your internet speed.
-- You must get in the habit of turning on your VPN with any networks you do not trust. You could also look into turning on VPN on unlock.
+- You must get in the habit of turning on your VPN with any networks you do not trust. You could also look into [turning on VPN on unlock](https://askubuntu.com/questions/1033278/automatically-turn-on-vpn-on-computer-unlock-ubuntu-18-04).
 
 **Why:** A VPN is crucial to your right to control the data you leave behind, and on untrusted networks provides a necessary layer of security.
 
