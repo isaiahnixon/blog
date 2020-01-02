@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Isaiah's Blog]]></title><description><![CDATA[A blog.]]></description><link>https://isaiahnixon.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 01 Jan 2020 01:35:25 GMT</lastBuildDate><item><title><![CDATA[Easy Steps for a Secure Ubuntu 18.04 Laptop]]></title><description><![CDATA[Outlined here are some easy (and often overlooked) steps, which can greatly increase the security and privacy of your Ubuntu 18.04 laptop…]]></description><link>https://isaiahnixon.com/secure-ubuntu-laptop/</link><guid isPermaLink="false">https://isaiahnixon.com/secure-ubuntu-laptop/</guid><pubDate>Tue, 31 Dec 2019 12:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Outlined here are some easy (and often overlooked) steps, which can greatly increase the security and privacy of your Ubuntu 18.04 laptop.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Isaiah's Blog]]></title><description><![CDATA[A blog.]]></description><link>https://isaiahnixon.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 02 Jan 2020 00:20:59 GMT</lastBuildDate><item><title><![CDATA[Easy Steps for a Secure Ubuntu 18.04 Laptop]]></title><description><![CDATA[Outlined here are some easy (and often overlooked) steps, which can greatly increase the security and privacy of your Ubuntu 18.04 laptop…]]></description><link>https://isaiahnixon.com/secure-ubuntu-laptop/</link><guid isPermaLink="false">https://isaiahnixon.com/secure-ubuntu-laptop/</guid><pubDate>Tue, 31 Dec 2019 12:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Outlined here are some easy (and often overlooked) steps, which can greatly increase the security and privacy of your Ubuntu 18.04 laptop.&lt;/p&gt;
 &lt;h2&gt;Encrypted Disk&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;What:&lt;/strong&gt; Ubuntu 18.04 comes with built-in disk encryption.
 During the installation, select the “Encrypt the new Ubuntu installation for security” option.&lt;/p&gt;
@@ -27,6 +27,7 @@ During the installation, select the “Encrypt the new Ubuntu installation for s
 /static/43192dd62b5cea77586d27cccf74d5ba/799d3/disk-encryption.png 590w,
 /static/43192dd62b5cea77586d27cccf74d5ba/11d19/disk-encryption.png 800w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -37,9 +38,9 @@ During the installation, select the “Encrypt the new Ubuntu installation for s
 &lt;li&gt;Finish the installation, and the hard drive will be encrypted whenever the computer is powered off.
 &lt;strong&gt;Caveats:&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;If you need to dual boot, a more &lt;a href=&quot;https://askubuntu.com/questions/1029285/ubuntu-18-04-disk-encryption&quot;&gt;advanced configuration is required&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Make a habit of shutting your computer down whenever it is not in use, this will trigger the encryption process each time and lock in the security benefits.
-&lt;strong&gt;Why:&lt;/strong&gt; The physical security of a computer (especially a laptop) is impossible to guarantee, and I don’t want to stress about what files are on my drive at any given moment in time.&lt;/li&gt;
+&lt;li&gt;Make a habit of shutting your computer down whenever it is not in use, this will trigger the encryption process each time and lock in the security benefits.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt; The physical security of a computer (especially a laptop) is impossible to guarantee, and I don’t want to stress about what files are on my drive at any given moment in time.&lt;/p&gt;
 &lt;h2&gt;Firewall&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;What:&lt;/strong&gt; Ubuntu 18.04 comes with &lt;a href=&quot;https://help.ubuntu.com/community/UFW&quot;&gt;Uncomplicated Firewall (UFW)&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
@@ -96,6 +97,7 @@ sudo apt install network-manager-openvpn-gnome&lt;/code&gt;&lt;/pre&gt;&lt;/div&
 /static/608f7a857533d74eb5c6e19d2ca35605/2a3d6/vpn-settings-import.png 885w,
 /static/608f7a857533d74eb5c6e19d2ca35605/67459/vpn-settings-import.png 987w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -108,7 +110,7 @@ sudo apt install network-manager-openvpn-gnome&lt;/code&gt;&lt;/pre&gt;&lt;/div&
 &lt;p&gt;&lt;strong&gt;Caveats:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A VPN connection can slow down your internet speed.&lt;/li&gt;
-&lt;li&gt;You must get in the habit of turning on your VPN with any networks you do not trust. You could also look into turning on VPN on unlock.&lt;/li&gt;
+&lt;li&gt;You must get in the habit of turning on your VPN with any networks you do not trust. You could also look into &lt;a href=&quot;https://askubuntu.com/questions/1033278/automatically-turn-on-vpn-on-computer-unlock-ubuntu-18-04&quot;&gt;turning on VPN on unlock&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt; A VPN is crucial to your right to control the data you leave behind, and on untrusted networks provides a necessary layer of security.&lt;/p&gt;
 &lt;h2&gt;Domain Name System (DNS)&lt;/h2&gt;
@@ -142,6 +144,7 @@ sudo apt install network-manager-openvpn-gnome&lt;/code&gt;&lt;/pre&gt;&lt;/div&
 /static/66ca1f536d10a7d4a79d08cf3c00bf9b/2a3d6/vpn-settings.png 885w,
 /static/66ca1f536d10a7d4a79d08cf3c00bf9b/b7c40/vpn-settings.png 960w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -175,6 +178,7 @@ Add IPs for &lt;a href=&quot;https://www.techradar.com/news/best-dns-server&quot
 /static/8e0c901da06be68875967f35dc162900/0b23c/dns-settings-2.png 295w,
 /static/8e0c901da06be68875967f35dc162900/25733/dns-settings-2.png 560w&quot;
         sizes=&quot;(max-width: 560px) 100vw, 560px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
