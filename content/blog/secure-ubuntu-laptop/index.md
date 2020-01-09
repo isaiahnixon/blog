@@ -4,21 +4,23 @@ date: "2019-12-31T12:00:00Z"
 description: "Easy (and often overlooked) steps, which can greatly increase the security and privacy of your Ubuntu 18.04 laptop"
 ---
 
-Outlined here are some easy (and often overlooked) steps, which can greatly increase the security and privacy of your Ubuntu 18.04 laptop.
+> Outlined here are some easy (and often overlooked) steps, which can greatly increase the security and privacy of your Ubuntu 18.04 laptop.
 
 ##Encrypted Disk
 
 **What:** Ubuntu 18.04 comes with built-in disk encryption.
 During the installation, select the “Encrypt the new Ubuntu installation for security” option.
 
-![](disk-encryption.png)
+![The "Instalation type" screen in the Ubuntu 18.04 install process with the option for hard drive encryption selected.](disk-encryption.png)
 
 Credit: [mikewhatever](https://askubuntu.com/questions/1029285/ubuntu-18-04-disk-encryption/1029303#1029303) 
 
 
 - On the next screen, you will be prompted to create a decryption [password](https://security.stackexchange.com/q/6095).
 - Finish the installation, and the hard drive will be encrypted whenever the computer is powered off.
+
 **Caveats:**
+
 - If you need to dual boot, a more [advanced configuration is required](https://askubuntu.com/questions/1029285/ubuntu-18-04-disk-encryption).
 - Make a habit of shutting your computer down whenever it is not in use, this will trigger the encryption process each time and lock in the security benefits.
 
@@ -59,7 +61,7 @@ sudo apt install network-manager-openvpn-gnome
 - Click the `+` icon to the right of the “VPN” heading
 - Select “Import from file...”
 
-![](vpn-settings-import.png)
+![The settings menu with a number one pointing towards the Network tab, a number two pointing towards the + icon of the VPN heading, and a number three pointing towards the import from file option.](vpn-settings-import.png)
 
 Credit: [@thucnc](https://medium.com/@thucnc/openvpn-on-ubuntu-18-04-3295cabf114c)
 
@@ -79,13 +81,13 @@ Credit: [@thucnc](https://medium.com/@thucnc/openvpn-on-ubuntu-18-04-3295cabf114
 
 - Open the settings for your VPN connection
 
-![](vpn-settings.png)
+![The settings menu with the network tab selected and the setting button on the configured VPN highlighted.](vpn-settings.png)
 
 - Select the “IPv4” tab
 - Turn off the “Automatic” toggle underneath the “DNS” heading
 Add IPs for [public DNS](https://www.techradar.com/news/best-dns-server) of your choice. I use Google’s (`8.8.8.8`, `8.8.4.4`).
 
-![](dns-settings-2.png)
+![The VPN settings menu with a number one pointing towards the IPv4 tab, a number 2 pointing towards the Automatic toggle on the DNS configuration and a number 3 pointing towards the configured DNS IP addresses.](dns-settings-2.png)
 
 - Select the “IPv6” tab
 - Turn off the “Automatic” toggle underneath the “DNS” heading
