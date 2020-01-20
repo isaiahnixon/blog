@@ -29,8 +29,7 @@ const Bio = () => {
             twitter,
             github,
             drupal,
-            drupalanswers,
-            stackoverflow
+            drupalanswers
           }
         }
       }
@@ -60,8 +59,11 @@ const Bio = () => {
       />
       <p>
         Written by <strong>{author}</strong>.
-      </p>
-      <p>
+        <span
+          style={{
+            whiteSpace: `nowrap`,
+          }}
+        >
         <Social
           link={`https://twitter.com/${social.twitter}`}
           image='https://help.twitter.com/content/dam/help-twitter/brand/logo.png'
@@ -73,11 +75,6 @@ const Bio = () => {
           alt='GitHub'
         />
         <Social
-          link={`https://stackoverflow.com/users/${social.stackoverflow}`}
-          image='https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.svg'
-          alt='StackOverflow'
-        />
-        <Social
           link={`https://drupal.stackexchange.com/users/${social.drupalanswers}`}
           image='https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/se/se-icon.svg?v=62f619494ccd'
           alt='Drupal Answers'
@@ -87,6 +84,7 @@ const Bio = () => {
           image='https://www.drupal.org/files/druplicon-small.png'
           alt='Drupal.org'
         />
+        </span>
       </p>
     </div>
   )

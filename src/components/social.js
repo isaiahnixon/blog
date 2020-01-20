@@ -20,7 +20,7 @@ class Social extends React.Component {
           style={{
             height: `auto`,
             width: `30px`,
-            marginBottom: 0,
+            marginBottom: `-10px`,
           }}
           alt={alt}
           src={image}
