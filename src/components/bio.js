@@ -10,6 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
+import Social from "../components/social"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -25,7 +26,11 @@ const Bio = () => {
         siteMetadata {
           author
           social {
-            twitter
+            twitter,
+            github,
+            drupal,
+            drupalanswers,
+            stackoverflow
           }
         }
       }
@@ -55,6 +60,33 @@ const Bio = () => {
       />
       <p>
         Written by <strong>{author}</strong>.
+      </p>
+      <p>
+        <Social
+          link={`https://twitter.com/${social.twitter}`}
+          image='https://help.twitter.com/content/dam/help-twitter/brand/logo.png'
+          alt='Twitter'
+        />
+        <Social
+          link={`https://github.com/${social.github}`}
+          image='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
+          alt='GitHub'
+        />
+        <Social
+          link={`https://stackoverflow.com/users/${social.stackoverflow}`}
+          image='https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.svg'
+          alt='StackOverflow'
+        />
+        <Social
+          link={`https://drupal.stackexchange.com/users/${social.drupalanswers}`}
+          image='https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/se/se-icon.svg?v=62f619494ccd'
+          alt='Drupal Answers'
+        />
+        <Social
+          link={`https://www.drupal.org/u/${social.drupal}`}
+          image='https://www.drupal.org/files/druplicon-small.png'
+          alt='Drupal.org'
+        />
       </p>
     </div>
   )

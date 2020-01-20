@@ -6,6 +6,10 @@ module.exports = {
     siteUrl: `https://isaiahnixon.com/`,
     social: {
       twitter: `IsaiahNixon5`,
+      github: `isaiahnixon`,
+      drupal: `isaiah-nixon`,
+      drupalanswers: `82623`,
+      stackoverflow: `9637665`
     },
   },
   plugins: [
