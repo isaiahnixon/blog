@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Isaiah's Blog]]></title><description><![CDATA[A blog.]]></description><link>https://isaiahnixon.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 18 Jan 2020 18:21:30 GMT</lastBuildDate><item><title><![CDATA[How to Expand Technical Knowledge]]></title><description><![CDATA[“The solutions all are simple… after you have arrived at them. But they’re simple only when you know already what they are.” - Robert Pirsig…]]></description><link>https://isaiahnixon.com/how-to-expand-technical-knowledge/</link><guid isPermaLink="false">https://isaiahnixon.com/how-to-expand-technical-knowledge/</guid><pubDate>Fri, 17 Jan 2020 12:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Isaiah's Blog]]></title><description><![CDATA[A blog.]]></description><link>https://isaiahnixon.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 20 Jan 2020 20:04:51 GMT</lastBuildDate><item><title><![CDATA[How to Expand Technical Knowledge]]></title><description><![CDATA[“The solutions all are simple… after you have arrived at them. But they’re simple only when you know already what they are.” - Robert Pirsig…]]></description><link>https://isaiahnixon.com/how-to-expand-technical-knowledge/</link><guid isPermaLink="false">https://isaiahnixon.com/how-to-expand-technical-knowledge/</guid><pubDate>Fri, 17 Jan 2020 12:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;“The solutions all are simple… after you have arrived at them. But they’re simple only when you know already what they are.” - Robert Pirsig, Zen and the Art of Motorcycle Maintenance&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I have been reading through &lt;a href=&quot;https://en.wikipedia.org/wiki/Zen_and_the_Art_of_Motorcycle_Maintenance&quot;&gt;&lt;em&gt;Zen and the Art of Motorcycle Maintenance&lt;/em&gt;&lt;/a&gt; lately. It’s got me thinking a lot about how to get better as a technician and how to make technology better along the way. If you have not read this book before, I recommend it. If you have, this post is not an attempt to build on that amazing body of work. What follows are some lateral observations I have made as I was pondering some of the ideas in the novel.&lt;/p&gt;
@@ -42,7 +42,6 @@ Most of the technical knowledge built over time has belonged to private individu
 /static/0b901bac11283e476f721e8410db9a2c/2a3d6/How%20To%20Expand%20Technical%20Knowledge.png 885w,
 /static/0b901bac11283e476f721e8410db9a2c/8fe2a/How%20To%20Expand%20Technical%20Knowledge.png 938w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -91,7 +90,6 @@ An important person at a company (a product owner) comes up with an idea for a n
 /static/dd202f5a257505b692f0aae685a8c715/2a3d6/The%20Spectrum%20of%20Software%20Translation.png 885w,
 /static/dd202f5a257505b692f0aae685a8c715/b7c40/The%20Spectrum%20of%20Software%20Translation.png 960w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -130,7 +128,6 @@ During the installation, select the “Encrypt the new Ubuntu installation for s
 /static/43192dd62b5cea77586d27cccf74d5ba/799d3/disk-encryption.png 590w,
 /static/43192dd62b5cea77586d27cccf74d5ba/11d19/disk-encryption.png 800w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -202,7 +199,6 @@ sudo apt install network-manager-openvpn-gnome&lt;/code&gt;&lt;/pre&gt;&lt;/div&
 /static/608f7a857533d74eb5c6e19d2ca35605/2a3d6/vpn-settings-import.png 885w,
 /static/608f7a857533d74eb5c6e19d2ca35605/67459/vpn-settings-import.png 987w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -249,7 +245,6 @@ sudo apt install network-manager-openvpn-gnome&lt;/code&gt;&lt;/pre&gt;&lt;/div&
 /static/66ca1f536d10a7d4a79d08cf3c00bf9b/2a3d6/vpn-settings.png 885w,
 /static/66ca1f536d10a7d4a79d08cf3c00bf9b/b7c40/vpn-settings.png 960w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -283,7 +278,6 @@ Add IPs for &lt;a href=&quot;https://www.techradar.com/news/best-dns-server&quot
 /static/8e0c901da06be68875967f35dc162900/0b23c/dns-settings-2.png 295w,
 /static/8e0c901da06be68875967f35dc162900/25733/dns-settings-2.png 560w&quot;
         sizes=&quot;(max-width: 560px) 100vw, 560px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
