@@ -1,10 +1,10 @@
 ---
 title: What makes code good?
 date: "2020-02-08T12:00:00Z"
-description: "Lessons I have learned so-far about the principles of writing code that works."
+description: "Lessons I have learned thus far about the principles of writing code that works."
 ---
 
-> Lessons I have learned so-far about the principles of writing code that works.
+> Lessons I have learned thus far about the principles of writing code that works.
 
 I have always worked in small teams. As such, I don’t have a ton of experience with [Test-driven development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development) or working in environments with mature [DevOps](https://en.wikipedia.org/wiki/DevOps) processes. I love these ideas in concept and have even worked to implement some of the principles of them in my projects, but I have not worked on code immersed in these. My experience is not particularly unique. I have only been working on software in a professional capacity since 2016 and very few people start out on huge projects for huge teams. The advice I see for how to develop good code is permeated with assumptions about the situations in which people code that do not always prove true. As such, I would like to share some of what I have learned, in case it is useful.
 
