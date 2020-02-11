@@ -9,7 +9,8 @@ module.exports = {
       github: `isaiahnixon`,
       drupal: `isaiah-nixon`,
       drupalanswers: `82623`,
-      stackoverflow: `9637665`
+      stackoverflow: `9637665`,
+      linkedin: 'isaiah-nixon'
     },
   },
   plugins: [

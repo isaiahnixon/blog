@@ -29,7 +29,8 @@ const Bio = () => {
             twitter,
             github,
             drupal,
-            drupalanswers
+            drupalanswers,
+            linkedin
           }
         }
       }
@@ -58,7 +59,7 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author}</strong>.
+        Written by <strong>{author}</strong>.<br />
         <span
           style={{
             whiteSpace: `nowrap`,
@@ -82,7 +83,14 @@ const Bio = () => {
         <Social
           link={`https://www.drupal.org/u/${social.drupal}`}
           image='https://www.drupal.org/files/druplicon-small.png'
+          offset='3px'
           alt='Drupal.org'
+        />
+        <Social
+          link={`https://www.linkedin.com/in/${social.linkedin}`}
+          image='https://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo-500x500.png'
+          offset='2px'
+          alt='LinkedIn'
         />
         </span>
       </p>

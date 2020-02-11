@@ -5,7 +5,7 @@ import { rhythm, scale } from "../utils/typography"
 
 class Social extends React.Component {
   render() {
-    const { link, image, alt } = this.props
+    const { link, image, alt, offset } = this.props
     return (
       <a
         href={link}
@@ -13,14 +13,15 @@ class Social extends React.Component {
         style={{
           width: `30px`,
           height: `30px`,
-          boxShadow: 'none',
+          boxShadow: `none`,
+          display: `inline-block`,
+          marginBottom: `-10px`,
         }}
       >
         <img
           style={{
             height: `auto`,
-            width: `30px`,
-            marginBottom: `-10px`,
+            padding: `${offset}`,
           }}
           alt={alt}
           src={image}
