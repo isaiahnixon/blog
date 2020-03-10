@@ -79,17 +79,18 @@ const Bio = () => {
           link={`https://drupal.stackexchange.com/users/${social.drupalanswers}`}
           image='https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/se/se-icon.svg?v=62f619494ccd'
           alt='Drupal Answers'
+          offset='1px'
         />
         <Social
           link={`https://www.drupal.org/u/${social.drupal}`}
           image='https://www.drupal.org/files/druplicon-small.png'
-          offset='3px'
+          offset='5px'
           alt='Drupal.org'
         />
         <Social
           link={`https://www.linkedin.com/in/${social.linkedin}`}
           image='https://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo-500x500.png'
-          offset='2px'
+          offset='4px'
           alt='LinkedIn'
         />
         </span>
