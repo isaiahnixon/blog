@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Isaiah's Blog]]></title><description><![CDATA[A blog.]]></description><link>https://isaiahnixon.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 11 Feb 2020 19:41:12 GMT</lastBuildDate><item><title><![CDATA[What makes code good?]]></title><description><![CDATA[Lessons I have learned thus far about the principles of writing code that works. I have always worked in small teams. As such, I don’t have…]]></description><link>https://isaiahnixon.com/good-code/</link><guid isPermaLink="false">https://isaiahnixon.com/good-code/</guid><pubDate>Sat, 08 Feb 2020 12:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Isaiah's Blog]]></title><description><![CDATA[A blog.]]></description><link>https://isaiahnixon.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 10 Mar 2020 17:52:36 GMT</lastBuildDate><item><title><![CDATA[Complexity, Complication, and Crafting Software]]></title><description><![CDATA[“In dwelling, live close to the ground. In thinking, keep to the simple.” — Lao Tzu (translated by Stephen Mitchell) The Question The ideas…]]></description><link>https://isaiahnixon.com/complexity-and-complication/</link><guid isPermaLink="false">https://isaiahnixon.com/complexity-and-complication/</guid><pubDate>Tue, 10 Mar 2020 12:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;“In dwelling, live close to the ground.&lt;br&gt;
+In thinking, keep to the simple.”&lt;br&gt;
+— Lao Tzu (translated by Stephen Mitchell)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;The Question&lt;/h1&gt;
+&lt;p&gt;The ideas of complexity and complication have arisen a surprising number of times in my reading and conversations recently. As such, I ended up with a question that I did not have a satisfactory answer to.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is the difference between complex and complicated?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I spent quite some time researching this. There is a lot more nuance to it than I had at first anticipated. It forced me to think about the definitions of two other words that I do not find myself using as often: &lt;strong&gt;chaotic, and simple&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1&gt;The Answer&lt;/h1&gt;
+&lt;p&gt;The issue is &lt;a href=&quot;https://english.stackexchange.com/questions/10459/what-is-the-difference-between-complicated-and-complex&quot;&gt;linguistic&lt;/a&gt;, and as such can end up in a quagmire of interpretation which I usually avoid. But, it maintained my attention because there is a place for discussing the complexity of systems and problems in my day-to-day work as a developer. As such, here is a distillation of a useful framework that stems from the emerging field of &lt;a href=&quot;https://www.uvic.ca/research/groups/cphfri/assets/docs/Complexity_Science_in_Brief.pdf&quot;&gt;complexity science&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 578px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1f4ac195468fbf719177342b1cf32e3f/35bbf/The%20Complexity%20Analysis%20Chart.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 107.78546712802768%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAWABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAMCBAX/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/9oADAMBAAIQAxAAAAHqxpFLYYgrIy2oKn//xAAZEAEAAwEBAAAAAAAAAAAAAAABAgMhABH/2gAIAQEAAQUClPW1OhYomyjtZiax96J4f//EABgRAQEAAwAAAAAAAAAAAAAAAAABAhES/9oACAEDAQE/Aecmqiv/xAAYEQEBAAMAAAAAAAAAAAAAAAAAAQIREv/aAAgBAgEBPwHrFuLEf//EABQQAQAAAAAAAAAAAAAAAAAAADD/2gAIAQEABj8CH//EABoQAAMAAwEAAAAAAAAAAAAAAAABESExQZH/2gAIAQEAAT8hcnWPRzz1lnFsqK7EXz0u2ijg+B//2gAMAwEAAgADAAAAEN83vf/EABgRAQEBAQEAAAAAAAAAAAAAAAEAESEx/9oACAEDAQE/ENfCz4zZO3//xAAYEQADAQEAAAAAAAAAAAAAAAAAAREhMf/aAAgBAgEBPxCXWX1ChFD/xAAfEAEBAAICAQUAAAAAAAAAAAABEQAhMUFRYXGhwdH/2gAIAQEAAT8Q43Bg0X5wqSJd/tjVaYIr95cal6mAG/HjBNT7PQx3NFpceGxO8QKc9Z//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;The Complexity Analysis Chart&quot;
+        title=&quot;The Complexity Analysis Chart&quot;
+        src=&quot;/static/1f4ac195468fbf719177342b1cf32e3f/35bbf/The%20Complexity%20Analysis%20Chart.jpg&quot;
+        srcset=&quot;/static/1f4ac195468fbf719177342b1cf32e3f/7237a/The%20Complexity%20Analysis%20Chart.jpg 148w,
+/static/1f4ac195468fbf719177342b1cf32e3f/0cfdf/The%20Complexity%20Analysis%20Chart.jpg 295w,
+/static/1f4ac195468fbf719177342b1cf32e3f/35bbf/The%20Complexity%20Analysis%20Chart.jpg 578w&quot;
+        sizes=&quot;(max-width: 578px) 100vw, 578px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Complex — having a large number of unpredictable interactions.&lt;br&gt;
+Complicated — having a large number of predictable interactions.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This answer must be contextualized by the type of problem or system being analyzed. For example, two hundred predictably interacting cells may form a simple biological system while the same number of SQL queries may constitute a complicated relationship between an app and a database. But, the language for describing complexity can remain the same across the contexts.&lt;/p&gt;
+&lt;h1&gt;The Application&lt;/h1&gt;
+&lt;p&gt;As far as software is concerned, Tim Peters hit the nail on the head:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Simple is better than complex.&lt;br&gt;
+Complex is better than complicated.”&lt;br&gt;
+— Tim Peters in &lt;em&gt;&lt;a href=&quot;https://www.python.org/dev/peps/pep-0020/&quot;&gt;The Zen of Python&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Simplicity&lt;/h2&gt;
+&lt;p&gt;Simple software systems are predictable and, because of the low number of interactions, naturally extensible. This is almost always the best path forward when crafting software. Counterintuitively, this is not always the quickest way forward. I find that it is often easier to make complicated software systems than it is to make simple ones.&lt;/p&gt;
+&lt;p&gt;This phenomenon has two sources. The primary being that of the potential number of ways to do any task with code, there are more complicated ways than simple ones. As such, you are statistically more likely to arrive at a solution that requires more interactions than fewer. The secondary being the tendency of developers to over-engineer.&lt;/p&gt;
+&lt;p&gt;Iteration is the key to fighting both sources. When you compare multiple potential solutions, it is easier to find one that requires fewer interactions. When you practice over and over again, you will begin to let go of the desire to over-engineer the solution.&lt;/p&gt;
+&lt;h2&gt;Complexity&lt;/h2&gt;
+&lt;p&gt;Complexity, by definition, is about unpredictability. In the realm of software, everything boils down to glorified if-then statements. As such, can one even make complex software?&lt;/p&gt;
+&lt;p&gt;I have come to believe that complexity in software directly rises from resilience to change. If you think of a very complicated piece of software, often you will realize that it fails when the conditions are not exactly as expected. Therefore, the complicated piece of software only has one purpose. Humans must learn to understand the constraints of the software instead of the software itself understanding the constraints of humans.&lt;/p&gt;
+&lt;p&gt;Complex software would handle being used for multiple purposes and would find graceful paths forward even when the inputs and constraints are not exactly as expected. The fields of &lt;a href=&quot;https://en.wikipedia.org/wiki/Machine_learning&quot;&gt;machine learning&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Natural_language_processing&quot;&gt;natural language processing&lt;/a&gt; have a lot of underlying complex problems. It is most likely from these fields that truly complex software systems will arise.&lt;/p&gt;
+&lt;p&gt;Most developers do not work in these fields. But, even when building standard websites and applications, there is the potential for developers to infuse a bit of complexity. Think of the typos and misclicks that users might make. Think of the possibility that this code will be moved into another application, or that the application itself will change over time. Code for those situations, while making as few assumptions as possible. The trick is thinking this way without again falling into the realm of complication and over-engineering.&lt;/p&gt;
+&lt;p&gt;When at all possible, keep to the simple.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[What makes code good?]]></title><description><![CDATA[Lessons I have learned thus far about the principles of writing code that works. I have always worked in small teams. As such, I don’t have…]]></description><link>https://isaiahnixon.com/good-code/</link><guid isPermaLink="false">https://isaiahnixon.com/good-code/</guid><pubDate>Sat, 08 Feb 2020 12:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;Lessons I have learned thus far about the principles of writing code that works.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I have always worked in small teams. As such, I don’t have a ton of experience with &lt;a href=&quot;https://en.wikipedia.org/wiki/Test-driven_development&quot;&gt;Test-driven development (TDD)&lt;/a&gt; or working in environments with mature &lt;a href=&quot;https://en.wikipedia.org/wiki/DevOps&quot;&gt;DevOps&lt;/a&gt; processes. I love these ideas in concept and have even worked to implement some of the principles of them in my projects, but I have not worked on code immersed in these. My experience is not particularly unique. I have only been working on software in a professional capacity since 2016 and very few people start out on huge projects for huge teams. The advice I see for how to develop good code is permeated with assumptions about the situations in which people code that do not always prove true. As such, I would like to share some of what I have learned, in case it is useful.&lt;/p&gt;
