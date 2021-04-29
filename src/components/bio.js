@@ -89,7 +89,7 @@ const Bio = () => {
         />
         <Social
           link={`https://www.linkedin.com/in/${social.linkedin}`}
-          image='https://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo-500x500.png'
+          image='https://image.flaticon.com/icons/png/512/174/174857.png'
           offset='4px'
           alt='LinkedIn'
         />
