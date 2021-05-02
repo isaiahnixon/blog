@@ -1,6 +1,6 @@
 ---
 title: How I Make a Crypto Profit
-date: "2021-05-02T12:00:00Z"
+date: "2021-05-03T12:00:00Z"
 description: "KEEP CALM and TRUST THE MODEL"
 ---
 
@@ -8,7 +8,7 @@ description: "KEEP CALM and TRUST THE MODEL"
 
 # Disclaimer
 
-This is not a get-rich-quick scheme. The cryptocurrency markets are an untamed beast, and any investments you make in them are a definite risk. Only use disposable money for this purpose. This system has been very profitable for me, but I cannot guarantee future profits of any kind.
+This is not a get-rich-quick scheme. The cryptocurrency markets are an untamed beast, and any investments you make in them are a definite risk. This system has been very profitable for me, but I cannot guarantee future profits.
 
 # The System
 
