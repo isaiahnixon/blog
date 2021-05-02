@@ -1,4 +1,71 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Isaiah's Blog]]></title><description><![CDATA[A blog.]]></description><link>https://isaiahnixon.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 01 May 2021 05:08:00 GMT</lastBuildDate><item><title><![CDATA[Easy Automatic File Backups with Borg | Ubuntu 18.04]]></title><description><![CDATA[“And when they ask us what we’re doing,
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Isaiah's Blog]]></title><description><![CDATA[A blog.]]></description><link>https://isaiahnixon.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 02 May 2021 05:58:29 GMT</lastBuildDate><item><title><![CDATA[How I Make a Crypto Profit]]></title><description><![CDATA[KEEP CALM and TRUST THE MODEL Disclaimer This is not a get-rich-quick scheme. The cryptocurrency markets are an untamed beast, and any…]]></description><link>https://isaiahnixon.com/how-i-make-a-crypto-profit/</link><guid isPermaLink="false">https://isaiahnixon.com/how-i-make-a-crypto-profit/</guid><pubDate>Sun, 02 May 2021 12:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;KEEP CALM and TRUST THE MODEL&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Disclaimer&lt;/h1&gt;
+&lt;p&gt;This is not a get-rich-quick scheme. The cryptocurrency markets are an untamed beast, and any investments you make in them are a definite risk. Only use disposable money for this purpose. This system has been very profitable for me, but I cannot guarantee future profits of any kind.&lt;/p&gt;
+&lt;h1&gt;The System&lt;/h1&gt;
+&lt;p&gt;At a high-level, this is the system I have devised for making steady profits on a crypto investment portfolio.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/629841ff334775fec57541e0aec0a9ac/8e4c8/profit-system.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 49.40417080436941%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABCklEQVQoz2WS1w3EMAxDs0167w3I/kv58AgwcHAfjCyLoinHSZ7noSiKUFVVKMtSICd6jxxejCzL3nVcT0jatg1N0wjDMIRt27RX17UicCMc8q7r3j7XQIKDvu9FQIB8mibl7EOmEbIPwPk4jork8DFCjxxS3PddcV1XOSQ/zzPM8/w6RADRNE11AAKAPgThSZAT7vtWRDAWZc1YCNOEa4/9PI94nkR3yAfCsiwSuK5LzoAFaT6OQwciTLQoEZe+x8QL7o5mBO3SwBlCjIaAXZKDj6D/Ds+ARpyA2CVNnoQ79Mtw3SN/HBIpAI/uv8ceBzKFnwtgnzo/68+h/6LfI2TcsI4frvkxYlM/WIM2gYHPJnsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;profit system&quot;
+        title=&quot;profit system&quot;
+        src=&quot;/static/629841ff334775fec57541e0aec0a9ac/799d3/profit-system.png&quot;
+        srcset=&quot;/static/629841ff334775fec57541e0aec0a9ac/00d96/profit-system.png 148w,
+/static/629841ff334775fec57541e0aec0a9ac/0b23c/profit-system.png 295w,
+/static/629841ff334775fec57541e0aec0a9ac/799d3/profit-system.png 590w,
+/static/629841ff334775fec57541e0aec0a9ac/2a3d6/profit-system.png 885w,
+/static/629841ff334775fec57541e0aec0a9ac/ae92f/profit-system.png 1180w,
+/static/629841ff334775fec57541e0aec0a9ac/8e4c8/profit-system.png 2014w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;There are four modules:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Server 1:&lt;/strong&gt; Generate reports&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Investor:&lt;/strong&gt; Choose assets and ratios&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Server 2:&lt;/strong&gt; Run trading bots&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exchange:&lt;/strong&gt; Host accounts and process orders&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can replace any of the modules with various alternatives without disrupting the whole. Also, in theory, this system should work well for assets of any kind that can be exchanged by a bot and for which raw data is available.&lt;/p&gt;
+&lt;h1&gt;The Breakdown&lt;/h1&gt;
+&lt;p&gt;Here are some details on how I have set up each of my modules.&lt;/p&gt;
+&lt;h2&gt;Server 1: Generate Reports&lt;/h2&gt;
+&lt;p&gt;I have a &lt;a href=&quot;https://www.python.org/&quot;&gt;Python&lt;/a&gt; script that scrapes public APIs on cryptocurrency data each day, combines the data from different sources, and then processes it into consumable format.&lt;/p&gt;
+&lt;p&gt;From there, the scripts runs the data through different &lt;a href=&quot;https://www.tensorflow.org/&quot;&gt;TensorFlow&lt;/a&gt; models. There are seperate models for predictions on each timescale and for assets with different available datapoints. These models are already trained with historical data on the specific assets which can fit in with my other modules.&lt;/p&gt;
+&lt;p&gt;The model predictions, and the processed data are combined into a report. I plug this data into a spreadsheet which color codes everything and just generally makes it easier for a human to digest. And finally, I upload this report to my &lt;a href=&quot;https://www.patreon.com/isaiahnixon&quot;&gt;Patreon&lt;/a&gt; (shameless plug).&lt;/p&gt;
+&lt;h2&gt;Investor: Choose Assets and Ratios&lt;/h2&gt;
+&lt;p&gt;I keep rigorous track of how different assets have performed over time in my profit system. And I use this knowledge, the raw data from the report, and whatever rumors are circulating through various news channels to form some general opinions of which assets are currently viable investments.&lt;/p&gt;
+&lt;p&gt;I take these opinions, and the model predictions from the report and weigh the relative value of different assets in my mind. I try hard to find the places where my opinions and the models agree that profits are to be made, and to avoid places where one or the other predicts losses.&lt;/p&gt;
+&lt;p&gt;Generally, I shoot for at least 5 assets at a time in my portfolio. And I keep a very even spread between them. I make small tweaks here and there, but this rule of thumb has served me well.&lt;/p&gt;
+&lt;h2&gt;Server 2: Run Trading Bots&lt;/h2&gt;
+&lt;p&gt;For each of the assets in my portfolio, I run a &lt;a href=&quot;https://hummingbot.io/&quot;&gt;Hummingbot&lt;/a&gt; which handles high frequency trading between that asset and my USD account on the exchange. I have various strategies that I have developed for these bots, and in general have found them to be quite impressive. There is a lot of freedom within the system, especially when running Python &lt;a href=&quot;https://docs.hummingbot.io/scripts/overview/&quot;&gt;scripts alongside the strategies&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Exchange: Host Accounts and Process Orders&lt;/h2&gt;
+&lt;p&gt;For my exchange, I chose &lt;a href=&quot;https://www.binance.us&quot;&gt;Binance US&lt;/a&gt;. There are pros and cons to all of the major exchanges, so it was a tough choice. But here were my reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pre-built Hummingbot connector.&lt;/li&gt;
+&lt;li&gt;Discounted trading fees when you use BNB to pay them.&lt;/li&gt;
+&lt;li&gt;Direct crypto to USD trading, which seems a steadier option than using a stablecoin.&lt;/li&gt;
+&lt;li&gt;Simple bank connector for moving money in and out.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;The Future&lt;/h1&gt;
+&lt;p&gt;This is a living and breathing system. I am constantly updating my scripts, models, and strategies. But, I have found that this way of managing my portfolio has led to consistent and steady profit, even in a generally volatile market. I hope this information helps some of you who are trying to accomplish the same. If you want deeper information, or to follow along with the updates to my system please check out my &lt;a href=&quot;https://www.patreon.com/isaiahnixon&quot;&gt;Patreon&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Easy Automatic File Backups with Borg | Ubuntu 18.04]]></title><description><![CDATA[“And when they ask us what we’re doing,
 you can say, We’re remembering.
 That’s where we’ll win out in the long run.”
 — Ray Bradbury…]]></description><link>https://isaiahnixon.com/automatic-file-backups/</link><guid isPermaLink="false">https://isaiahnixon.com/automatic-file-backups/</guid><pubDate>Sat, 05 Sep 2020 12:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
