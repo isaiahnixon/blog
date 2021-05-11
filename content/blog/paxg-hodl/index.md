@@ -1,5 +1,5 @@
 ---
-title: Why I'm Adding a PAXG HODL to my Portfolio
+title: Why I'm Adding Gold-backed Crypto to my Portfolio
 date: "2021-05-11T12:00:00Z"
 description: "How two very different types of investments can become one stabilizing portfolio factor."
 ---
