@@ -1,4 +1,527 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Isaiah's Blog]]></title><description><![CDATA[A blog.]]></description><link>https://isaiahnixon.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 18 May 2021 21:51:50 GMT</lastBuildDate><item><title><![CDATA[Crypto Metrics That I Use to Make Investments]]></title><description><![CDATA[“Data, I think, is one of the most powerful mechanisms for telling stories. I take a huge pile of data and I try to get it to tell stories…]]></description><link>https://isaiahnixon.com/crypto-metrics-i-track/</link><guid isPermaLink="false">https://isaiahnixon.com/crypto-metrics-i-track/</guid><pubDate>Tue, 18 May 2021 12:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Isaiah's Blog]]></title><description><![CDATA[A blog.]]></description><link>https://isaiahnixon.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 23 Sep 2021 18:56:34 GMT</lastBuildDate><item><title><![CDATA[Data Storage in Python with Google Sheets + Pandas]]></title><description><![CDATA[The Problem You need somewhere centralized, accessible, and visually digestible to store data that you’re processing or collection with a…]]></description><link>https://isaiahnixon.com/sheets-and-python/</link><guid isPermaLink="false">https://isaiahnixon.com/sheets-and-python/</guid><pubDate>Wed, 22 Sep 2021 12:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;The Problem&lt;/h1&gt;
+&lt;p&gt;You need somewhere centralized, accessible, and visually digestible to store data that you’re processing or collection with a Python script.&lt;/p&gt;
+&lt;h1&gt;The Solution&lt;/h1&gt;
+&lt;p&gt;Use &lt;a href=&quot;https://sheets.google.com&quot;&gt;Google Sheets&lt;/a&gt; as free (or &lt;a href=&quot;https://one.google.com/about/plans&quot;&gt;very cheap&lt;/a&gt;) storage for even large quantites of data, and &lt;a href=&quot;https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html&quot;&gt;Pandas DataFrames&lt;/a&gt; to make the data easy to handle on the scripting side.&lt;/p&gt;
+&lt;p&gt;Yeah, that sounds like it would be a huge lift. But, I’ve distilled the setup and utilization down enough to make it quite easy to use.&lt;/p&gt;
+&lt;h2&gt;Requirements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://console.cloud.google.com&quot;&gt;Google Account&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.python.org/downloads/&quot;&gt;Python 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://pypi.org/project/gspread/&quot;&gt;gspread&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://pypi.org/project/pandas/&quot;&gt;pandas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To install gspread and pandas on my setup, I used &lt;a href=&quot;https://pip.pypa.io/en/stable/getting-started/&quot;&gt;pip&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;pip3 &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; gspread
+pip3 &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; pandas&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Step by Step&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://console.cloud.google.com/projectcreate&quot;&gt;Create a new project on Google Cloud.&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/107fd9eca4021d87726abe8c7cc7aaa7/682be/00-create-project.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABVklEQVQoz42RbUrDQBCGcyahoKIFQXooEQSxVtETeA1PoDfwh+IHpUpqs0022WTznd3N63ZTSgNtzcDDhGXn2ZmJtXfxi/3LKY5HDvojgqNrgsOhg8E9aXF6R9C/WaLvndwSHAyb796Vh975JwZnT7AIjTCxCRjPkFVAWiokRUO6JMkl4kyA6wst0jaJPrNqJZDHDD51DZ5HwQLfEPjUEPMIUgp0CasscrjEwev7BG9fU9gzCn8hMkLfZMYC5HmGuoam3onFkxIzN4FDtZiVCONSj98QRIXBCzL4YWo6+FdIWYbxj4tv28WcxiBUyz1ushcKvbvayIk+WxduHVnJChHzURSF3pOEEAKiqkyWUulihbJSUGohqdG4dgiDMMHH2AYhxEjbIzTCVP/lopTdOnx+ifDwOAfnsV58viraFLtEK6HUo1RCtYq20anDtfdbXXTpZlP8AQJTQ8UPUJcPAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;00 create project&quot;
+        title=&quot;00 create project&quot;
+        src=&quot;/static/107fd9eca4021d87726abe8c7cc7aaa7/799d3/00-create-project.png&quot;
+        srcset=&quot;/static/107fd9eca4021d87726abe8c7cc7aaa7/00d96/00-create-project.png 148w,
+/static/107fd9eca4021d87726abe8c7cc7aaa7/0b23c/00-create-project.png 295w,
+/static/107fd9eca4021d87726abe8c7cc7aaa7/799d3/00-create-project.png 590w,
+/static/107fd9eca4021d87726abe8c7cc7aaa7/2a3d6/00-create-project.png 885w,
+/static/107fd9eca4021d87726abe8c7cc7aaa7/682be/00-create-project.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Access the &lt;code class=&quot;language-text&quot;&gt;Service Accounts&lt;/code&gt; page.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d9c5403e8c9c117823d9895dd496ce99/682be/01-service-accounts.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACYElEQVQoz3VSTU/UUBTtL9KFJMbEiPweFy4MSw0hYGBp4kLjQonQmX4zbV8nyBBHMREVXYkuAHW+sNOhnen0Yz460+NtEYwmvuTmnHdf3n33nHe5mUUbN1Yc3FxtY3bFxrVlG492XHyzYxy0Rjg6iXHr8TFmFhqYu1/H7HId15fquLZYw5V7NVxdqOHS3SYuz3/G3HwFnOMFaLVd+OEQwSChmKDf76N7asPttIFxhDeVCp4VDfASAy8zCApxQSHUsSGoxDWIxNWSCS4ZDxEGfSCd4nwNh0N0OqcI4gEwneKVVQJf2IAkFCAWeRj6JixmgJl/h8WoYEyXut0efL+PNE3zgr1eD4dHh2h8/4FxGGDb0PHkKY+150WsrRchywpUVYWiKBeR5QzDABcEARzHQYbT6VmXPc9DjXLeiwqC23dQ3SKpggRJkiGKEgRRRYFkFgiLYoZajqbJwI1GI/LMz7tKiGcrCkPEg0HOJ9s7+LS6ClnXqQMdJcLNkg7dMIkbOQoiPSQp0DQNnOv5+Gl34AchsnJRHCOgT8k6Tn97+k6TwK+vQxaKEPgNCAUemiJBEQXIIuXI38zbvKDteGg6PdS/HqO9sITA9eD5PpqNBpxOB+lkgr3XL7EpFsBUCaYi5mHIwgVnylmekQIujkK4ngvnpIXowUMk1haGSYI4ii4+6f2H/Vwms8owmQXTsoj/ifO9ycjDbEQyeeNkkl9OD74gpk9pU3fZWbY+7u9DJ+/K5TKNh0nm/z84r9tFs9WCS1IDGp2QJGb7arWK3d1dvN3bA6OX81HRtPxStj/Hf+MXznDddzAZQckAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;01 service accounts&quot;
+        title=&quot;01 service accounts&quot;
+        src=&quot;/static/d9c5403e8c9c117823d9895dd496ce99/799d3/01-service-accounts.png&quot;
+        srcset=&quot;/static/d9c5403e8c9c117823d9895dd496ce99/00d96/01-service-accounts.png 148w,
+/static/d9c5403e8c9c117823d9895dd496ce99/0b23c/01-service-accounts.png 295w,
+/static/d9c5403e8c9c117823d9895dd496ce99/799d3/01-service-accounts.png 590w,
+/static/d9c5403e8c9c117823d9895dd496ce99/2a3d6/01-service-accounts.png 885w,
+/static/d9c5403e8c9c117823d9895dd496ce99/682be/01-service-accounts.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Create a new service account&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8c0ea73b31c756a35f6d400b72bfb3d7/682be/02-create-account.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB50lEQVQoz6WRyW4VMRBF+49AAjEPIgs+CgQSAULCB8Ai7PgTtqxAIIQCKHlJd79+PdjtHtyjD+VONmGQkLB0VeUqV9Wt6+Di4xOuPw25+Tzk9k7Mnd2Ey08irm6HXBFceBRyY3fD1ss1W7shW3sR9/Zi7r6IuPYs5tZOxKVtqXn4lfsP3hH8WMWsog2rMCFTNbWd2OSGcJ1zHKeodiA6WPHl0yEHx4qDw4x1ZuRNSWGs+CWJvFfi13YgmMeBzra4eQQc9A2dUZRaobOU0k2Y/Tc0r16jxw6VJkxSs7x1s9gzLD4EtuvQWqYVBao0uMZgsg1RvCaOIqI8J3r/gWj/LUeq5fgkpaoqmqYRKxvVp/CxaZoIRpmmhU2SJFhrYRqwdUVZlkvciK83GfrjZ3TVoJQM1w2pNM8EubZkAm9nIR20rUVLsVJaGnYL7WmeyQtFK/emaWlkUCexcRoZxpF+GMV34s+LVdqgTbUQClI9ECZaPiUlySra3i2aHn3/RhpHKK9jLgxFBm+LTSI6brBVSa0LKpVTiK4+b6Uu6PthYehXNMYs093QM5uCscxxtT4HzuxcKZyHjzVnOa9h19lFVC/o6XE4x7nj/oC/5QO/t/8hz3AYBmnm/guBb9L3/W/Nlsm/Uv2H8xNsHjlLBhwHCAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;02 create account&quot;
+        title=&quot;02 create account&quot;
+        src=&quot;/static/8c0ea73b31c756a35f6d400b72bfb3d7/799d3/02-create-account.png&quot;
+        srcset=&quot;/static/8c0ea73b31c756a35f6d400b72bfb3d7/00d96/02-create-account.png 148w,
+/static/8c0ea73b31c756a35f6d400b72bfb3d7/0b23c/02-create-account.png 295w,
+/static/8c0ea73b31c756a35f6d400b72bfb3d7/799d3/02-create-account.png 590w,
+/static/8c0ea73b31c756a35f6d400b72bfb3d7/2a3d6/02-create-account.png 885w,
+/static/8c0ea73b31c756a35f6d400b72bfb3d7/682be/02-create-account.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a3404a7e73fb6cce9ca58960682aa270/682be/03-create-account.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB10lEQVQoz21S2W7UMBTNH/GCVPHQqkjAA7+EEKioQAUSX8UvIIRUpmSSseM4i7N4yXZ67cxMGYqlI1/72ueeu0RP329xfp3g4mOC5zcMlzcZzq5SPPuQBDx5u8Xl5x1ef+OELODVV44XXzjOP3HycZxd57h49wMv33xHtIkZEpZjuxOoGoPeTpClQsoleF5hJ8pwp92MzownaD30inCnB0Tj4OCsAZYZYZkaRWmQiQJS5siFwC5N0ff96l+WFSdrf24kIm0M6lqhKAqotsPSFOhajV9/Cvy85dikNWKmwKSBVBPyekSuRohqQFbaPf8SKKdKIBqGAVVVQogMjuzFGSzTSAolbn/fkdoaXU+l0BbWjTB2pJ1KYBzZw170qnCuc0Rdr4PCqqphrVsjTVSvrqP7Cs65AGstDGXj4c89+Y3RjwlF5ZDwEnGaQ5R9KP40kQKt0bYtaqVC/cZxxDzPR4Q0/8KR0FI0RZ9U06Ah+I8TfRjc2iznKFXa/bt/SQ5EJ4ReiU/PRz04vW2HhcZhgeonCoD/rkeEvilam6DMq/QNCpNDQeI4weYuRpIyMMaRZRk4X3fG2AnZkbBTa5c9fKoHh6+doPmTUq7pWnNsyAGHOj6M5mrfA3GPPfUwzOCGAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;03 create account&quot;
+        title=&quot;03 create account&quot;
+        src=&quot;/static/a3404a7e73fb6cce9ca58960682aa270/799d3/03-create-account.png&quot;
+        srcset=&quot;/static/a3404a7e73fb6cce9ca58960682aa270/00d96/03-create-account.png 148w,
+/static/a3404a7e73fb6cce9ca58960682aa270/0b23c/03-create-account.png 295w,
+/static/a3404a7e73fb6cce9ca58960682aa270/799d3/03-create-account.png 590w,
+/static/a3404a7e73fb6cce9ca58960682aa270/2a3d6/03-create-account.png 885w,
+/static/a3404a7e73fb6cce9ca58960682aa270/682be/03-create-account.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Create and download a key for the service account.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c069313c920adc367882da2334f0c29a/682be/07-service-accounts-keys.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB80lEQVQoz2WSyW7UQBCG/Ug5hSUCDiwH3igcQCIhigTKAZ4hEgckniEvgRSkURIvY3s83trtXuy2f6o8YyshJZVcblf9/9fd9g4+rPDsdI2j0wgvzmK8PE9xeJLg6ckaTz5HOPhI384SvL9I8eZrMn1/dZ7g7bcUz78kOKJ8/SPG4ae/eHd8Be/Pao1gvYEfpchKCal75MIizmrc+DFuwxRVY1Aah1r1KBuNuu1QSwtB71wLRUlPqTt4fd/BaIXB9QBGoNdo8hKVdLCGhssc1lHz9TW6IoexBuPQw9HcLsZ9UtC6p41BXdfI8wJlVQNWYxveYXVziziOEYcRtl0HdfEd+vLnTsI5jOMIt39OyXqyZsIeVVVhs0mhlKJVBy0F8qJA27ZEQjTU3N35UL9+Y5hAevRkYghmMhh3hENLgq2ibdUCZVlBaT05uWGYmu+7j7TmwpD8HAaqGcRa+1gwqyyitKJL2SDZCig7TqR8DEzIKaXc1SSg7xmx8CPBjtCZsCIBFunImekK2jILaaJmEl4zVHP/LDiLPRDkgaZppi3MoYkwz/NJlE3mgf9jORIiXS6FHXmLTMO3xiEaAd/3EdKZBUGwGHZEavc59z4wMApeSTc80wgalI1EvE0RkFhIv8wmyyBEsxzJkkJMRpyCar5Qjn/0ZDtFaZlCIgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;07 service accounts keys&quot;
+        title=&quot;07 service accounts keys&quot;
+        src=&quot;/static/c069313c920adc367882da2334f0c29a/799d3/07-service-accounts-keys.png&quot;
+        srcset=&quot;/static/c069313c920adc367882da2334f0c29a/00d96/07-service-accounts-keys.png 148w,
+/static/c069313c920adc367882da2334f0c29a/0b23c/07-service-accounts-keys.png 295w,
+/static/c069313c920adc367882da2334f0c29a/799d3/07-service-accounts-keys.png 590w,
+/static/c069313c920adc367882da2334f0c29a/2a3d6/07-service-accounts-keys.png 885w,
+/static/c069313c920adc367882da2334f0c29a/682be/07-service-accounts-keys.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/91a96c2788fca3d2d4134c7b21a5ec5d/682be/08-make-a-key.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACEklEQVQoz3WSS2sUQRSF+z9lZZDExyIiuHflH9GFIjEhYsCFuHDnxj/hJqAbEWHiDGSGmSiZR3fXZKar34/q7s9bHSMa4oXTt/t0Vd1zzy1n48mEm7sLtl7MuLXvcufA58au13Gbz2dsPJ2zve/x4LXPziuf2wcedwX3Dn229ly29zx23rhsPhtx//ERzsnpgpmrmC4UK52SFjVBVOIuA36cLfg584nSkigzgoowKYglWy7OjbybPzmV7BhTURYZbVMDLZiCPFhSVmXHZWlMbWrZ0GCMkbW5LGuoa8N14eRFQRhGrFYrAh3Sljnam6HDUDbVckgth1cUpRQWdALKokNR2FxKvkBdN1ahQWuNUoosl+qiqsoS9EoxGAz43uvRPz5m0O/TH5zQG0zoD6eMTueMJxPG4zGj0YjhcEiSJDhpJopE2ToIyOTdRiFVtXyrpcLXgUDj+y7K9yQr5u6SKMmoKvNHpVVsxTlLXTL3NWdzhXcekZUtaZqhVprl1GX99RvB0SfU9BwvbDjXRWeB9fFaDyv5GUVR56OF9SjPK/wM9JcewcNHxO8/EHz8TJzWJHlL0/LfcArxzfZuB3AZVv5ivsBbr4nevkO/PCSaTbvbkMRRJ8C2acX8DXuGYz2I47gbjF1ko5IrY4fkeh6JnbYt0vHVb7/Kzq+raJrmouXLam3bdmRzpSfLy4P2CvcvLvhf2BQ1sUinyjoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;08 make a key&quot;
+        title=&quot;08 make a key&quot;
+        src=&quot;/static/91a96c2788fca3d2d4134c7b21a5ec5d/799d3/08-make-a-key.png&quot;
+        srcset=&quot;/static/91a96c2788fca3d2d4134c7b21a5ec5d/00d96/08-make-a-key.png 148w,
+/static/91a96c2788fca3d2d4134c7b21a5ec5d/0b23c/08-make-a-key.png 295w,
+/static/91a96c2788fca3d2d4134c7b21a5ec5d/799d3/08-make-a-key.png 590w,
+/static/91a96c2788fca3d2d4134c7b21a5ec5d/2a3d6/08-make-a-key.png 885w,
+/static/91a96c2788fca3d2d4134c7b21a5ec5d/682be/08-make-a-key.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a88bbb60dc8d5ca584a3b3282b7824d9/682be/09-make-a-key.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACLklEQVQoz22SWW8SYRSG568YE7XauMWf4trWJSb+Cy9MvOWOtMoMwzLMDDNsU6A/wHinaIEKXloWQ0OEYbODbH0956sgF/2SN2e+hee85xykyw9lbGzJuL4tY3MniM2nKq48CeLaloKrj2VceiDjBp3fexnC7eequL/5TMWdFyFsbNN+R8WtV/T+kR9377+F9F5WIQfDpBCiMRNGPAHNsKGGNQSUEBQ1Is6WihnWSrppQ6cz/d+daSUgJRMJWFYcmXQKcdPEl8+fcNL6iUajjka9hmajgdrxD9Rrx2g2G3DdLrrdDkbDAYqHX2HbFvadDJxMmhhpSJZF2WIxoUBARvnoCP1+H61WC+12G26vh06ng18k13UxmUww9sbgVa1WEYlEkBCmLCSTSUi80TRNXITDIZRKJYxGIwEZDocCwJpOp+cw0un4HFgoFODz+bC3twu/3w+TKpTMeBwaO9R1AoZxWCyj4zLoDy5aZ4MBzk498f2Nqll3yFEKazY1XiNFsftOEUCPSupRqZ7nYUxuhOh7SpBZrQ4veyCAlUoFhmHAcRykqX8sybZt0T+2qygKyuWyeDybzYTm8/kqziny+v36DfDhI77T4HRqVyaT+Q9kq5yFNwzmrLwWi8WFJXP/BuSyVztBkUrWolExDDYmhsJAnfrHYpcMzufzq6zZbBa5XG4VuTyH7p38AZJr0+X+CSCTLRLHVIr+izQkdrpMsq5YbG1PbxjGSfl3y5L/AvUBvXkNhYsqAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;09 make a key&quot;
+        title=&quot;09 make a key&quot;
+        src=&quot;/static/a88bbb60dc8d5ca584a3b3282b7824d9/799d3/09-make-a-key.png&quot;
+        srcset=&quot;/static/a88bbb60dc8d5ca584a3b3282b7824d9/00d96/09-make-a-key.png 148w,
+/static/a88bbb60dc8d5ca584a3b3282b7824d9/0b23c/09-make-a-key.png 295w,
+/static/a88bbb60dc8d5ca584a3b3282b7824d9/799d3/09-make-a-key.png 590w,
+/static/a88bbb60dc8d5ca584a3b3282b7824d9/2a3d6/09-make-a-key.png 885w,
+/static/a88bbb60dc8d5ca584a3b3282b7824d9/682be/09-make-a-key.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/859dccc887dc0c95c2de75f642fc95b9/682be/10-make-a-key.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACD0lEQVQoz41SyY7TQBD1t8BhNDAsc+BP0CBmYECIP+GYGxCUeI3Xttt2+IXcck4mjlHEhEhB2RUkFIYsCo/qTkAghKClp3qucr+uTbl+ouLwVMWNMxVHj3WCgYNTg3waDh5quHai4Sb57j0zcfeJiVvnJm6fGzh+auLwzMDRIwN3ntP/D17h+P4LKCXVgKpbErbHwKIYjhdBtxyUNBNl8vuMww9jaT0WIQi55AH5BH7EhF+JOUcYMnAeEThiz0bgVMAYQ8gCuI4tecVh8DwPruuABT583wOPQkR0N4k53larqKYplDCMYFkWarUa2u0cedYimyHP36HT6UgI/v7yEr1eT+LD3na7XfT7fdTrdflYkiSUYRxD0zQSaWOxWGA8mWCyx3w+x2w2w2g0xGazxt9Oo9FAoVCgSsNdhkKw1Wph83UhhcbjMYmMpBWYTqfyezgcYjAY7PkAHwcTfPq8xMXFBWzb3mVoexwviyoyKlec7XaL/z3b7Tdp8zynnvqoUh8VLkvWkWWZDC6XS6xWK6zXAut/4urqC5rNphycFBR1u64Ln5oqXgmCAI7jwDBNGJYJm7hVsaX9FQ7d0Q1DxipUrhhsFEU7QSEkehDQOkS0Oj6tSqVchFF6DVcvE3/zBzzyW6UiXK0E39LllDmPoQhVISp2MKU9SpIUKTW3msSEhHi8578j3cd/cipX3P8OIHm3aJfQqQcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;10 make a key&quot;
+        title=&quot;10 make a key&quot;
+        src=&quot;/static/859dccc887dc0c95c2de75f642fc95b9/799d3/10-make-a-key.png&quot;
+        srcset=&quot;/static/859dccc887dc0c95c2de75f642fc95b9/00d96/10-make-a-key.png 148w,
+/static/859dccc887dc0c95c2de75f642fc95b9/0b23c/10-make-a-key.png 295w,
+/static/859dccc887dc0c95c2de75f642fc95b9/799d3/10-make-a-key.png 590w,
+/static/859dccc887dc0c95c2de75f642fc95b9/2a3d6/10-make-a-key.png 885w,
+/static/859dccc887dc0c95c2de75f642fc95b9/682be/10-make-a-key.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;Copy the key to your Python project directory.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mv&lt;/span&gt; ~/Downloads/innate-mix-326900-6e64c607c722.json python-and-google-sheets/service_account.json&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;Back on the Google Cloud dashboard, enable the Google Sheets API.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8bf7de68222b1c48e36b514198816707/682be/04-marketplace.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACOUlEQVQoz32Sy27TQBSG/TwsQKAihJCK+jYs2HbBoggKEvAOtMrFl/H97i4ACbGCPVKFVIgdpSFOkziunTZ2aH6OnSaCBVj6dP4Zz5w555/htvYH2H49xMM3McVKx9h63sedpyFu74W48STE3Wdd7Lzq4sGLLukI9/e72H4Z0ZoI92h8c6+HW7tfsbP7HtxwkqMfT5Dmc5zPSlwUS3yP+mgKMlqiCll3oFlH4BUPgupD1HyacyHKev1PkA3SJhTShu2BK4tL5OcplssrrL+43wOTBCgyg6rIFCWohMLEGtexEPgufO9vAp8SRlEXnShCr9PB2ecvGCVT/Ph2jFajAZ4X0OZ5NNsSGi1W0+QZNE2HYRjQdX1DNee6LrjpdIrBcIh0NEby6DHKj58wSKdUIVWkKFBVFYqqkV4hKyqYYkBSTEjULqsiUUXP88EV8zlSSpBME5Skr959QHxyQr4wWKYJ27YJCw5FjypwHQcOYdHYdT1Yll0fotKhJq3nZhcFkjRDUf7aePjz9BRvDw7RarchiCJ4QaQWTajUmkAHVZoXBBiUgDFGlcs1dcJsVmCSXpJ3M5RFWSccxgPoQgty8xBS4wCM0PgmLFmEozF4mgxHkeDoKoIggO/71K5XRy7PM4xGZ4gHA5TldULy1DYNBNXNXeO7To3nVNgrqjEl+hNuTr5lWY7FYrFpeTwe1/4ER0dUwYq6CsL/B5sKJ0mCHnk2nkyQ5Tny2QxhGNa3Wz2NNdWTWG/8H78B+RjAGB2XkLEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;04 marketplace&quot;
+        title=&quot;04 marketplace&quot;
+        src=&quot;/static/8bf7de68222b1c48e36b514198816707/799d3/04-marketplace.png&quot;
+        srcset=&quot;/static/8bf7de68222b1c48e36b514198816707/00d96/04-marketplace.png 148w,
+/static/8bf7de68222b1c48e36b514198816707/0b23c/04-marketplace.png 295w,
+/static/8bf7de68222b1c48e36b514198816707/799d3/04-marketplace.png 590w,
+/static/8bf7de68222b1c48e36b514198816707/2a3d6/04-marketplace.png 885w,
+/static/8bf7de68222b1c48e36b514198816707/682be/04-marketplace.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c24a7ea8e576c2a865bcc3d46c84e136/682be/05-marketplace-search.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB8klEQVQoz32STYvTQBjH86UUD4K6IIIifhIvfgDRRVAru7oHTyJexZvgxfMqeFnwoLurbbrbJE3SpukkM0kmmXTy98kkWwpWH/gxL8zzf17msa4/C3H7VYS7BxHuvJzh1l6InUFI6ww39yNcfRri0mMfl3cDwu8JcOVJgBvPyXc/xLVBhJ3dU9x7dAhrFi0x8QJMgzmyQkFWGomQCOZLJLMYPJMQeUWUHUWFVBRgPIdUGnm5QkG0fu3Z0qsaVSkNjV7BWL/KwR7KN2837pqORndsMassS2R5jiyjiFKay7qukcsSiguUHz9BHZ+Y+0ZrNE1DoKf5C4tzjuUyRhzHRqg1pRQ8z0VeVV1yFLAxG90p/ces1lkIAZFlRlCTk6rV+kGzIaD7c/vmX5iSGWMoisKUXFEAULu+eD9xHDvIWIqp72MehKg9D4qy1uvSt5RcVSVa0YtMjCDZZ+8Ih+EPZHGCc2dCUxCA3X+A5P2Hi9S3l1xRxCRJOtH+Q9ogjBVIUxoZwWlNkfIUy3kERoJ8ZEPSO9lXtYnVjkEr1pax2bOHrxlevCMhFmJkj+E4DhbUmgV9XrqI19OwiSKsOUV1XJcySigLbhyESPH1KMa37zH99gQnp78wHI0wtm3YxGg8xu/hEOdnZ/BcB1OaCJ/665LOH6MINi3veYB0AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;05 marketplace search&quot;
+        title=&quot;05 marketplace search&quot;
+        src=&quot;/static/c24a7ea8e576c2a865bcc3d46c84e136/799d3/05-marketplace-search.png&quot;
+        srcset=&quot;/static/c24a7ea8e576c2a865bcc3d46c84e136/00d96/05-marketplace-search.png 148w,
+/static/c24a7ea8e576c2a865bcc3d46c84e136/0b23c/05-marketplace-search.png 295w,
+/static/c24a7ea8e576c2a865bcc3d46c84e136/799d3/05-marketplace-search.png 590w,
+/static/c24a7ea8e576c2a865bcc3d46c84e136/2a3d6/05-marketplace-search.png 885w,
+/static/c24a7ea8e576c2a865bcc3d46c84e136/682be/05-marketplace-search.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ec156489e8eb8ce6cf6c99d916487434/682be/06-google-sheets.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABnUlEQVQoz42SuU7DQBCG/TxAgzgEAkHBI/AOPAAlAiEuhYKeColXQBR00ESiogWaCEiE1nHsOHa8Xu9h/8zaGAIKx8ifRx7v/J7Dzswew3LDJRhWj10sHTHM7TMsHlZM7zJMbDNMfmNqh2H+wMUK5c4e9LCw/YC1rSYcP5LgwgB0JeSFBlIFCILLHBFXvxLXnpISLuGALFIJLp5vIVKO56cWOu2XksD38D8rKjcMKsHXJMD6VQNeHKLn+ej1fERRBM5TaG1G0CV5nqMgjYJuJXlRSpqwWwnaoMoNHVQwckhiIYZxBCkl0jT9gHNeYoxBnVdjLR+GcEYD3sDgshmA9WmuqkCWmZ+bfM8ZFbUhp35B+rhu3uHk9AqtjU1k949QNoGq+Zr0WcA4K1sW0iCIFFKeIIl9DK5vkJ6dg/f7MNWwxoqOw9FaQVBrMdeQytDcFCR9RHoesiCApgUYWoRS6k/swhw7eNdl6BJCiHL4GSGpVU7PnKq2i7Dn/uJDsE+tBVSN/VXCMKy2SkLtdgftzisYc8sEW0Xtv1PFNd4ADzM7uj/ktEcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;06 google sheets&quot;
+        title=&quot;06 google sheets&quot;
+        src=&quot;/static/ec156489e8eb8ce6cf6c99d916487434/799d3/06-google-sheets.png&quot;
+        srcset=&quot;/static/ec156489e8eb8ce6cf6c99d916487434/00d96/06-google-sheets.png 148w,
+/static/ec156489e8eb8ce6cf6c99d916487434/0b23c/06-google-sheets.png 295w,
+/static/ec156489e8eb8ce6cf6c99d916487434/799d3/06-google-sheets.png 590w,
+/static/ec156489e8eb8ce6cf6c99d916487434/2a3d6/06-google-sheets.png 885w,
+/static/ec156489e8eb8ce6cf6c99d916487434/682be/06-google-sheets.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;7&quot;&gt;
+&lt;li&gt;Open &lt;code class=&quot;language-text&quot;&gt;service_account.json&lt;/code&gt; and copy the client email.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0c8d572bd5af158db64a33b1f6dd0906/682be/11-copy-client-email.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+UlEQVQoz22TSY7bQAxFfYwsGknD6EVa81Aq2bLlWB5kSdYsJZugkyx6kftf4IesUmcAsiBYJRceP8nv1Yf1I7JrhCT1sT/6OJ59bNMQMhFwhIQbRb/DDiWs4E/wnd9YgUD/ecLrz1esHtcPaFofbWvidPVQ3h10vUXfbOSFi+zs4Uzf+bc0CxAnIeJdiIiy2AqCRgSN4UWxAq+en99hnj0Mg4m2sxSM872yMY4mboWD08VbwK6KS+7icOJOAoQbQeolPLlR8NVHAk6Th6Yx0RNsGAnaksLGVvc3tXVto+NClIvSUYo/LVBf/gU0DA2811rZPJlKGZ85s9K2sXAttDIVpJJhGSk/ZD7ivYBIuOVItzyOWiErYGUMYmXjxGCttG60Sg4u1nemeqveUVdpJmD6UgNZ4TAYCth1BikylhEY6l7T+VZatDCL1NlIjy65gZbErjjxwnzIndQKDZOAtJSyopZpVuMkCBZRZUFFBAEF2j5CfpOoaomSoqikandH82PoNhUINrGe4frpAfcmoAcOVZP4+tLh248eL98HjF8mdPOkck+5GWd004x6GNQitGUW27wthY1dkw8vuUO+c1BRW6yWl8RnDj7vlRIdmz1vVhudIf/YZv30HpdC0Bzcxby+8pjyHW30nHvKh/wP2h0CJBScg/j/wF8BA3d//xERpgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;11 copy client email&quot;
+        title=&quot;11 copy client email&quot;
+        src=&quot;/static/0c8d572bd5af158db64a33b1f6dd0906/799d3/11-copy-client-email.png&quot;
+        srcset=&quot;/static/0c8d572bd5af158db64a33b1f6dd0906/00d96/11-copy-client-email.png 148w,
+/static/0c8d572bd5af158db64a33b1f6dd0906/0b23c/11-copy-client-email.png 295w,
+/static/0c8d572bd5af158db64a33b1f6dd0906/799d3/11-copy-client-email.png 590w,
+/static/0c8d572bd5af158db64a33b1f6dd0906/2a3d6/11-copy-client-email.png 885w,
+/static/0c8d572bd5af158db64a33b1f6dd0906/682be/11-copy-client-email.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;8&quot;&gt;
+&lt;li&gt;Open any Google Sheet that you want to use for this project, and share it with that email.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d5fac068f157f31e50d8320a965c7130/682be/12-share-sheet-with-client.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACcElEQVQoz3WTS08TURiG+3fc+hfULYL23k47bemFhBWCVBOWJOIOCbGwMsSNl3JpGxL/gXiFKLT0irFlepleoJbSUn08M0hdcZIn72RO5v3e+b5zDGOSEYfkwG63Y7XZhF4+S5KEy+Uaqobb7daRZRmv14vX4+Wu5R437tzk9sgt7GYzBt+479+mh8nJSR4/ChMOh3k4O6vrzMyMrhrT09NMTU3xQOjV+9DEBG6PKCI8JLeMwSUqumQv941GXrx8xZcfoCgK1WqVcrmsa6VSQVVVBoMB/X6fXu9c0KPT6bC4+AzJKRHw+0Uoh2Yo4/MHMZmtvImu86v3h2OlTLmqUq3Vda0IamqDRuuUbu+CwR/oXQx0XV5exina4vd5kd0SBo+IGgqF9L5F374mq/TZzxQ5zOY5OMyTTBdIZgrsH+bI5krkCgrZo5+UKnXOegOWlpawid77RUK3Z/zSMBgMYbXa2NyIkq9Aoaii1mqXqBpVmvUm+/lPHBQ+o5QU0Y5jGnWVvd1dPuzsMD8/rw/Q4BHDCAaDOJ1OVlZXSWWPeP/1gL3vKVKpFEmNZJJsOk+6tEuxmaHT7qLW6ygVlXani7YikYiedGjocDhYW1ujUDgin8tQrZRpt09ptVqcnJzQaDbodnr0xW92u2eCc6qtLul8kY/fcjxZeKqHMsjCUOuhzWZlaytGpw/N9rmu/d9cu662ViLPxZQdBAIBfD7f/4SyOD4Lokpi+x3RzRjrm3GiGzFiMUE8RjweJ5FIDNmKxYkntpmbm0MLNTTUT7/TjsflxGk1YxwdwTQ2islkwmqxYLFYBZZr0b7XLoZ+e4ThX0TwfDKhnv1kAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;12 share sheet with client&quot;
+        title=&quot;12 share sheet with client&quot;
+        src=&quot;/static/d5fac068f157f31e50d8320a965c7130/799d3/12-share-sheet-with-client.png&quot;
+        srcset=&quot;/static/d5fac068f157f31e50d8320a965c7130/00d96/12-share-sheet-with-client.png 148w,
+/static/d5fac068f157f31e50d8320a965c7130/0b23c/12-share-sheet-with-client.png 295w,
+/static/d5fac068f157f31e50d8320a965c7130/799d3/12-share-sheet-with-client.png 590w,
+/static/d5fac068f157f31e50d8320a965c7130/2a3d6/12-share-sheet-with-client.png 885w,
+/static/d5fac068f157f31e50d8320a965c7130/682be/12-share-sheet-with-client.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;9&quot;&gt;
+&lt;li&gt;While you’re in the Sheet, copy the key. The key is the middle part of the share link between &lt;code class=&quot;language-text&quot;&gt;/d/&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;/edit&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/cfd5ad1150c1908e350fd6a831db6acb/682be/13-copy-sheet-id.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACOUlEQVQoz32T204TURSG+zxe+wYkXppIamU67Rw7U55Aeyd3ygWXtoinNojigYcwMWqikVjaqfWmHVIKWKCGlp6g87lnQxtJ1Em+WXtW9v73v1bWRG4ko6jJBKqqSjRdRxeYpollWVNs256SSqVwXAfXcZlVoly5dpWZ6zPEYzEiVsqShycCruvKA5ODYT7lONN1eJlhGHJvmLNsC83UBQZJ3SCii5dhWsRuzbG8/JCtkkexWKRUKk0pl8tUKhW2t7fxfZ96vU6tVqPRaLC0tISmacKtg20liCQ1UZ7tEo0prK294OjokN3dPVqtFjs7Tfb29mk2mzLX6XQ4Pu7Q6/UZjUaETzabRU0kcCxRoZEUJQvr8/NpcUuSB9kcm16Nr9+KbHkeleoPPMEklivfKYu8J9yGjqvVKouLi7INjuinbjpETFFuOp1GjSusvnxL0YeDRp1B+wCGPeh3YXAi6Mrv8XhMMD5jHEiDok3LJITD897boaApHM4TVxRevX4DLZ/jzXeclD7SLwtKH2TsFd/T8T7zs+FzuOPT/tVlGISCuT8EU0SMiWA8zvr6Oqfi6t39fQ7abU4GI8GQbn/A8CwgNBUEIgZjsRpLh7nc3wRFyYpwuLGxITd1hnBR0T+fwqdTnn+BlZUVIaheFgx7GPby7sIChdU1Hj3J8yyfp1AoXCIvc3kZb997zJ37T8lkMnImnYtZjcgh1RLYuoauKijRWZSbUZQ5hbn/YCbjAoVwji3LPv8BhOBv3+xs7inFMkMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;13 copy sheet id&quot;
+        title=&quot;13 copy sheet id&quot;
+        src=&quot;/static/cfd5ad1150c1908e350fd6a831db6acb/799d3/13-copy-sheet-id.png&quot;
+        srcset=&quot;/static/cfd5ad1150c1908e350fd6a831db6acb/00d96/13-copy-sheet-id.png 148w,
+/static/cfd5ad1150c1908e350fd6a831db6acb/0b23c/13-copy-sheet-id.png 295w,
+/static/cfd5ad1150c1908e350fd6a831db6acb/799d3/13-copy-sheet-id.png 590w,
+/static/cfd5ad1150c1908e350fd6a831db6acb/2a3d6/13-copy-sheet-id.png 885w,
+/static/cfd5ad1150c1908e350fd6a831db6acb/682be/13-copy-sheet-id.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;11&quot;&gt;
+&lt;li&gt;Create variables in your Python script to store this key and the ID of the worksheet.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;SHEET_KEY &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;1xsb5NmB9OfqthMsoXGN_6bIE2CCRoN0eTQ_QvWu_-vk&apos;&lt;/span&gt;
+SHEET_ID &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;The ID of a worksheet is it’s numerical order within the larger sheet, starting with 0.&lt;/em&gt;&lt;/p&gt;
+&lt;ol start=&quot;12&quot;&gt;
+&lt;li&gt;Download &lt;a href=&quot;https://gist.github.com/isaiahnixon/69719181a4d86612a5db8329229811a0&quot;&gt;google_sheets.py&lt;/a&gt; and move it into the same directory as your Python script.&lt;/li&gt;
+&lt;li&gt;From your script, import the methods defined in &lt;code class=&quot;language-text&quot;&gt;google_sheets.py&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; google_sheets &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; get_sheet&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; set_sheet&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; clear_sheet&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; append_row_to_sheet&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;14&quot;&gt;
+&lt;li&gt;Now you can use these methods, passing &lt;code class=&quot;language-text&quot;&gt;SHEET_KEY&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;SHEET_ID&lt;/code&gt;, and then a DataFrame or series to add to a DataFrame. Here’s an example implementation:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; pandas &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; pd
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; google_sheets &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; get_sheet&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; set_sheet&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; clear_sheet&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; append_row_to_sheet
+
+SHEET_KEY &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;1xsb5NmB9OfqthMsoXGN_6bIE2CCRoN0eTQ_QvWu_-vk&apos;&lt;/span&gt;
+SHEET_ID &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+
+data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Name&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;nick&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;krish&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;jack&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token string&quot;&gt;&apos;Age&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+ 
+df &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DataFrame&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+set_sheet&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;SHEET_KEY&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; SHEET_ID&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; df&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Run this script, and you can see the data appear on the Sheet.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;python3 example.py&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4bd419678f4b3376bc0c9b5fce8c8022/682be/14-updated-data.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABOklEQVQoz6VTy07DMBDM5/IZfE5vfAQ3JC6UK0IlfZkmtWPH8SvusOumVaUeKHSl0cb2embWdqqX7RuWYoV68YW6riGlLOithXMOw+DgvUcIoWTGOI4okYHXzzkenh4xe57hY/6OyiUPa3vaeCTgjZz7nucGdF13JrIkwmJaa1haizHBxwA5KEhrIPYKVdtKiJ3EdrdH07QIMRKhP4MdOiYsDgMGEmMyBq+HEJFTRgpU069Q1WuBxbpFo8NE4kg5lrYukdLlOF/MJ4w5w2tyrgQ73KNTEqcwxpSiw+FQkKn4lhxJUJqISpv+SpmL/prZRKC2K0OEJ6V7wEfC51wc3kt2csoXWmltrlsY/9vy5JDjeAlTPo9vAJFhOrLiUCkFI9awzQZefsPuNvQtprfmfs38Lg39BF2ni8MfH5JZuT15lesAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;14 updated data&quot;
+        title=&quot;14 updated data&quot;
+        src=&quot;/static/4bd419678f4b3376bc0c9b5fce8c8022/799d3/14-updated-data.png&quot;
+        srcset=&quot;/static/4bd419678f4b3376bc0c9b5fce8c8022/00d96/14-updated-data.png 148w,
+/static/4bd419678f4b3376bc0c9b5fce8c8022/0b23c/14-updated-data.png 295w,
+/static/4bd419678f4b3376bc0c9b5fce8c8022/799d3/14-updated-data.png 590w,
+/static/4bd419678f4b3376bc0c9b5fce8c8022/2a3d6/14-updated-data.png 885w,
+/static/4bd419678f4b3376bc0c9b5fce8c8022/682be/14-updated-data.png 1003w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;With these basic methods, built on the &lt;a href=&quot;https://en.wikipedia.org/wiki/Create,_read,_update_and_delete&quot;&gt;CRUD&lt;/a&gt; model, you can work through almost any data storge need you might have. Plus, you have the added benefits of Google Sheets being cloud-based and human-readable by default. This easy setup and light Python module (29 lines of code total) together make up the most straightforward solution I could come up. I hope it can help you in your projects as well!  &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Crypto Metrics That I Use to Make Investments]]></title><description><![CDATA[“Data, I think, is one of the most powerful mechanisms for telling stories. I take a huge pile of data and I try to get it to tell stories…]]></description><link>https://isaiahnixon.com/crypto-metrics-i-track/</link><guid isPermaLink="false">https://isaiahnixon.com/crypto-metrics-i-track/</guid><pubDate>Tue, 18 May 2021 12:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;“Data, I think, is one of the most powerful mechanisms for telling stories. I take a huge pile of data and I try to get it to tell stories.” - Steven Levitt&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1&gt;Credits&lt;/h1&gt;

@@ -1,0 +1,549 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.75 'Merriweather','Georgia',serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.9);font-family:'Merriweather','Georgia',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:Montserrat,sans-serif;font-weight:900;text-rendering:optimizeLegibility;font-size:2.5rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.73286rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.4427rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;letter-spacing:0.140625em;text-transform:uppercase;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.83255rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.75966rem;line-height:1.1;font-style:italic;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}ul{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;list-style:disc;}ol{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:0.85rem;line-height:1.75rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1rem;line-height:1.75rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}blockquote{margin-left:-1.75rem;margin-right:1.75rem;margin-top:0;padding-bottom:0;padding-left:1.42188rem;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1.20112rem;line-height:1.75rem;color:hsla(0,0%,0%,0.59);font-style:italic;border-left:0.32813rem solid hsla(0,0%,0%,0.9);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.75rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.75rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}li > ul{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.75rem / 2);}code{font-size:0.85rem;line-height:1.75rem;}kbd{font-size:0.85rem;line-height:1.75rem;}samp{font-size:0.85rem;line-height:1.75rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.16667rem;padding-right:1.16667rem;padding-top:0.875rem;padding-bottom:calc(0.875rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.75rem;color:hsla(0,0%,0%,0.9);font-weight:400;}blockquote cite:before{content:"— ";}ul,ol{margin-left:0;}@media only screen and (max-width:480px){ul,ol{margin-left:1.75rem;}blockquote{margin-left:-1.3125rem;margin-right:0;padding-left:0.98438rem;}}h1,h2,h3,h4,h5,h6{margin-top:3.5rem;}a{box-shadow:0 1px 0 0 currentColor;color:#007acc;text-decoration:none;}a:hover,a:active{box-shadow:none;}mark,ins{background:#007acc;color:white;padding:0.10938rem 0.21875rem;text-decoration:none;}a.gatsby-resp-image-link{box-shadow:none;}</style><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=edf3d310d67f8284a562bc3a58c3e761"/><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>            
+              (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-5138131834910861",
+                enable_page_level_ads: true
+              });
+          </script><style type="text/css">.gatsby-resp-image-image{width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;color:transparent;}</style><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/icons/icon-48x48.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=edf3d310d67f8284a562bc3a58c3e761"/><meta name="generator" content="Gatsby 2.18.12"/><title data-react-helmet="true">Data Storage in Python with Google Sheets + Pandas | Isaiah&#x27;s Blog</title><meta data-react-helmet="true" name="description" content="Centralized and human-readable data from a Python script, without breaking the bank."/><meta data-react-helmet="true" property="og:title" content="Data Storage in Python with Google Sheets + Pandas"/><meta data-react-helmet="true" property="og:description" content="Centralized and human-readable data from a Python script, without breaking the bank."/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Isaiah Nixon"/><meta data-react-helmet="true" name="twitter:title" content="Data Storage in Python with Google Sheets + Pandas"/><meta data-react-helmet="true" name="twitter:description" content="Centralized and human-readable data from a Python script, without breaking the bank."/><style data-href="/styles.5f81339daa9828444137.css">@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-191cc9f50f3b76b9617cb383f19acb7d.woff2) format("woff2"),url(/static/montserrat-latin-100-370318464551d5f25b0f0a78f374faac.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-bdeaeb79db315697bd173a55b097dc18.woff2) format("woff2"),url(/static/montserrat-latin-100italic-ecf7d49386e8f265878e735db34a7c4b.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-85d5ef9db7f2dc6979172a4a3b2c57cb.woff2) format("woff2"),url(/static/montserrat-latin-200-1fc98e126a3d152549240e6244d7e669.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-49095760a498d024fe1a85a078850df9.woff2) format("woff2"),url(/static/montserrat-latin-200italic-fe46cf8b9462c820457d3bf537e4057f.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-7c3daf12b706645b5d3710f863a4da04.woff2) format("woff2"),url(/static/montserrat-latin-300-8dc95fab9cf98d02ca8d76e97d3dff60.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-f20b178ca2024a5eac8e42e6649db86c.woff2) format("woff2"),url(/static/montserrat-latin-300italic-3fe16939288856e8e828fa2661bf2354.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-bc3aa95dca08f5fee5291e34959c27bc.woff2) format("woff2"),url(/static/montserrat-latin-400-8102c4838f9e3d08dad644290a9cb701.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-5cad650422a7184467af5a4d17b264c4.woff2) format("woff2"),url(/static/montserrat-latin-400italic-d191f22af3bb50902b99ac577f81a322.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-92d16e458625f4d2c8940f6bdca0ff09.woff2) format("woff2"),url(/static/montserrat-latin-500-8b763220218ffc11c57c84ddb80e7b26.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-47bfcca6b69d6a9acca7a8bff17193e2.woff2) format("woff2"),url(/static/montserrat-latin-500italic-72c01f753c3940c0b9cb6bf2389caddf.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-6fb1b5623e528e27c18658fecf5ee0ee.woff2) format("woff2"),url(/static/montserrat-latin-600-7c839d15a6f54e7025ba8c0c4b333e8f.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-60789af1c9338ed1a9546722ec54b4f7.woff2) format("woff2"),url(/static/montserrat-latin-600italic-f3d4de8d0afb19e777c79032ce828e3d.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-39d93cf678c740f9f6b2b1cfde34bee3.woff2) format("woff2"),url(/static/montserrat-latin-700-80f10bd382f0df1cd650fec59f3c9394.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-ba136d97b14e82284dd595e257f11c47.woff2) format("woff2"),url(/static/montserrat-latin-700italic-8c98142b425630821139c24bd1698700.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-b7018be9ed6cd94da8b6675b3a468c3b.woff2) format("woff2"),url(/static/montserrat-latin-800-9a9befcf50d64f9d2d19d8b1d1984add.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-540ffdd223d1a9ad3d4e678e1a23372e.woff2) format("woff2"),url(/static/montserrat-latin-800italic-897086f99f4e1f45e6b1e9368527d0bc.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-58cd789700850375b834e8b6776002eb.woff2) format("woff2"),url(/static/montserrat-latin-900-26d42c9428780e545a540bbb50c84bce.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-451157bc8861fe54f523b3669a3def71.woff2) format("woff2"),url(/static/montserrat-latin-900italic-a8ec4957e1c24f5793305763ad9845b3.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/static/merriweather-latin-300-b1158cfcd4aacb9d8fb61625e37af46a.woff2) format("woff2"),url(/static/merriweather-latin-300-cc7de05e166e90320d7d896e0f72a19d.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/static/merriweather-latin-300italic-8fe52a48089d6ebe46db0b8e7cc66263.woff2) format("woff2"),url(/static/merriweather-latin-300italic-e1331f5397c2a673f9d3765138debdb5.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/static/merriweather-latin-400-8276fdb72ae8f4714d4e6eba704cc39f.woff2) format("woff2"),url(/static/merriweather-latin-400-69f09800f4f6479d06e44eba837df872.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/static/merriweather-latin-400italic-3a9be9ea9f7aa4af6de7307df21d9fc0.woff2) format("woff2"),url(/static/merriweather-latin-400italic-d76079ed7541a433a54f79316de086e9.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/static/merriweather-latin-700-fa534be7ffa380e39a7f6e03bf9a5e03.woff2) format("woff2"),url(/static/merriweather-latin-700-ba56ea84b8084b7ff9677f50d3cd81bd.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/static/merriweather-latin-700italic-1ef5edaaa20ae53ea50399884c5e48c6.woff2) format("woff2"),url(/static/merriweather-latin-700italic-534bc9e7ce93c73d73426e46acd78092.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/static/merriweather-latin-900-7528fb70e8a4a82c7305e72ff43ac25f.woff2) format("woff2"),url(/static/merriweather-latin-900-3799b6e2f5ed3fcccf9d7a708d7419fa.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/static/merriweather-latin-900italic-e1b4d2aaa78e12ad84aaf8a56321e4c2.woff2) format("woff2"),url(/static/merriweather-latin-900italic-2ae22f731b3424e8dbb4b37f7ca6e708.woff) format("woff")}</style><link as="script" rel="preload" href="/component---src-templates-blog-post-js-a6d09b3317a3b5b22ffd.js"/><link as="script" rel="preload" href="/commons-5f621f75975b05874da0.js"/><link as="script" rel="preload" href="/app-7324245c78eed8ea11f1.js"/><link as="script" rel="preload" href="/styles-7abe7a3cd8529a6be7e9.js"/><link as="script" rel="preload" href="/webpack-runtime-7b86c65304bbe4ce7b86.js"/><link as="fetch" rel="preload" href="/page-data/sheets-and-python/page-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div style="margin-left:auto;margin-right:auto;max-width:42rem;padding:2.625rem 1.3125rem"><header><h3 style="font-family:Montserrat, sans-serif;margin-top:0"><a style="box-shadow:none;text-decoration:none;color:inherit" href="/">Isaiah&#x27;s Blog</a></h3></header><main><article><header><h1 style="margin-top:1.75rem;margin-bottom:0">Data Storage in Python with Google Sheets + Pandas</h1><p style="font-size:0.83255rem;line-height:1.75rem;display:block;margin-bottom:1.75rem">September 22, 2021</p></header><section><h1>The Problem</h1>
+<p>You need somewhere centralized, accessible, and visually digestible to store data that you’re processing or collection with a Python script.</p>
+<h1>The Solution</h1>
+<p>Use <a href="https://sheets.google.com">Google Sheets</a> as free (or <a href="https://one.google.com/about/plans">very cheap</a>) storage for even large quantites of data, and <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html">Pandas DataFrames</a> to make the data easy to handle on the scripting side.</p>
+<p>Yeah, that sounds like it would be a huge lift. But, I’ve distilled the setup and utilization down enough to make it quite easy to use.</p>
+<h2>Requirements</h2>
+<ul>
+<li><a href="https://console.cloud.google.com">Google Account</a></li>
+<li><a href="https://www.python.org/downloads/">Python 3</a></li>
+<li><a href="https://pypi.org/project/gspread/">gspread</a></li>
+<li><a href="https://pypi.org/project/pandas/">pandas</a></li>
+</ul>
+<p>To install gspread and pandas on my setup, I used <a href="https://pip.pypa.io/en/stable/getting-started/">pip</a>.</p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">pip3 <span class="token function">install</span> gspread
+pip3 <span class="token function">install</span> pandas</code></pre></div>
+<h2>Step by Step</h2>
+<ol>
+<li><a href="https://console.cloud.google.com/projectcreate">Create a new project on Google Cloud.</a></li>
+</ol>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/107fd9eca4021d87726abe8c7cc7aaa7/682be/00-create-project.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABVklEQVQoz42RbUrDQBCGcyahoKIFQXooEQSxVtETeA1PoDfwh+IHpUpqs0022WTznd3N63ZTSgNtzcDDhGXn2ZmJtXfxi/3LKY5HDvojgqNrgsOhg8E9aXF6R9C/WaLvndwSHAyb796Vh975JwZnT7AIjTCxCRjPkFVAWiokRUO6JMkl4kyA6wst0jaJPrNqJZDHDD51DZ5HwQLfEPjUEPMIUgp0CasscrjEwev7BG9fU9gzCn8hMkLfZMYC5HmGuoam3onFkxIzN4FDtZiVCONSj98QRIXBCzL4YWo6+FdIWYbxj4tv28WcxiBUyz1ushcKvbvayIk+WxduHVnJChHzURSF3pOEEAKiqkyWUulihbJSUGohqdG4dgiDMMHH2AYhxEjbIzTCVP/lopTdOnx+ifDwOAfnsV58viraFLtEK6HUo1RCtYq20anDtfdbXXTpZlP8AQJTQ8UPUJcPAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="00 create project"
+        title="00 create project"
+        src="/static/107fd9eca4021d87726abe8c7cc7aaa7/799d3/00-create-project.png"
+        srcset="/static/107fd9eca4021d87726abe8c7cc7aaa7/00d96/00-create-project.png 148w,
+/static/107fd9eca4021d87726abe8c7cc7aaa7/0b23c/00-create-project.png 295w,
+/static/107fd9eca4021d87726abe8c7cc7aaa7/799d3/00-create-project.png 590w,
+/static/107fd9eca4021d87726abe8c7cc7aaa7/2a3d6/00-create-project.png 885w,
+/static/107fd9eca4021d87726abe8c7cc7aaa7/682be/00-create-project.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<ol start="2">
+<li>Access the <code class="language-text">Service Accounts</code> page.</li>
+</ol>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d9c5403e8c9c117823d9895dd496ce99/682be/01-service-accounts.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACYElEQVQoz3VSTU/UUBTtL9KFJMbEiPweFy4MSw0hYGBp4kLjQonQmX4zbV8nyBBHMREVXYkuAHW+sNOhnen0Yz460+NtEYwmvuTmnHdf3n33nHe5mUUbN1Yc3FxtY3bFxrVlG492XHyzYxy0Rjg6iXHr8TFmFhqYu1/H7HId15fquLZYw5V7NVxdqOHS3SYuz3/G3HwFnOMFaLVd+OEQwSChmKDf76N7asPttIFxhDeVCp4VDfASAy8zCApxQSHUsSGoxDWIxNWSCS4ZDxEGfSCd4nwNh0N0OqcI4gEwneKVVQJf2IAkFCAWeRj6JixmgJl/h8WoYEyXut0efL+PNE3zgr1eD4dHh2h8/4FxGGDb0PHkKY+150WsrRchywpUVYWiKBeR5QzDABcEARzHQYbT6VmXPc9DjXLeiwqC23dQ3SKpggRJkiGKEgRRRYFkFgiLYoZajqbJwI1GI/LMz7tKiGcrCkPEg0HOJ9s7+LS6ClnXqQMdJcLNkg7dMIkbOQoiPSQp0DQNnOv5+Gl34AchsnJRHCOgT8k6Tn97+k6TwK+vQxaKEPgNCAUemiJBEQXIIuXI38zbvKDteGg6PdS/HqO9sITA9eD5PpqNBpxOB+lkgr3XL7EpFsBUCaYi5mHIwgVnylmekQIujkK4ngvnpIXowUMk1haGSYI4ii4+6f2H/Vwms8owmQXTsoj/ifO9ycjDbEQyeeNkkl9OD74gpk9pU3fZWbY+7u9DJ+/K5TKNh0nm/z84r9tFs9WCS1IDGp2QJGb7arWK3d1dvN3bA6OX81HRtPxStj/Hf+MXznDddzAZQckAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="01 service accounts"
+        title="01 service accounts"
+        src="/static/d9c5403e8c9c117823d9895dd496ce99/799d3/01-service-accounts.png"
+        srcset="/static/d9c5403e8c9c117823d9895dd496ce99/00d96/01-service-accounts.png 148w,
+/static/d9c5403e8c9c117823d9895dd496ce99/0b23c/01-service-accounts.png 295w,
+/static/d9c5403e8c9c117823d9895dd496ce99/799d3/01-service-accounts.png 590w,
+/static/d9c5403e8c9c117823d9895dd496ce99/2a3d6/01-service-accounts.png 885w,
+/static/d9c5403e8c9c117823d9895dd496ce99/682be/01-service-accounts.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<ol start="3">
+<li>Create a new service account</li>
+</ol>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/8c0ea73b31c756a35f6d400b72bfb3d7/682be/02-create-account.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB50lEQVQoz6WRyW4VMRBF+49AAjEPIgs+CgQSAULCB8Ai7PgTtqxAIIQCKHlJd79+PdjtHtyjD+VONmGQkLB0VeUqV9Wt6+Di4xOuPw25+Tzk9k7Mnd2Ey08irm6HXBFceBRyY3fD1ss1W7shW3sR9/Zi7r6IuPYs5tZOxKVtqXn4lfsP3hH8WMWsog2rMCFTNbWd2OSGcJ1zHKeodiA6WPHl0yEHx4qDw4x1ZuRNSWGs+CWJvFfi13YgmMeBzra4eQQc9A2dUZRaobOU0k2Y/Tc0r16jxw6VJkxSs7x1s9gzLD4EtuvQWqYVBao0uMZgsg1RvCaOIqI8J3r/gWj/LUeq5fgkpaoqmqYRKxvVp/CxaZoIRpmmhU2SJFhrYRqwdUVZlkvciK83GfrjZ3TVoJQM1w2pNM8EubZkAm9nIR20rUVLsVJaGnYL7WmeyQtFK/emaWlkUCexcRoZxpF+GMV34s+LVdqgTbUQClI9ECZaPiUlySra3i2aHn3/RhpHKK9jLgxFBm+LTSI6brBVSa0LKpVTiK4+b6Uu6PthYehXNMYs093QM5uCscxxtT4HzuxcKZyHjzVnOa9h19lFVC/o6XE4x7nj/oC/5QO/t/8hz3AYBmnm/guBb9L3/W/Nlsm/Uv2H8xNsHjlLBhwHCAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="02 create account"
+        title="02 create account"
+        src="/static/8c0ea73b31c756a35f6d400b72bfb3d7/799d3/02-create-account.png"
+        srcset="/static/8c0ea73b31c756a35f6d400b72bfb3d7/00d96/02-create-account.png 148w,
+/static/8c0ea73b31c756a35f6d400b72bfb3d7/0b23c/02-create-account.png 295w,
+/static/8c0ea73b31c756a35f6d400b72bfb3d7/799d3/02-create-account.png 590w,
+/static/8c0ea73b31c756a35f6d400b72bfb3d7/2a3d6/02-create-account.png 885w,
+/static/8c0ea73b31c756a35f6d400b72bfb3d7/682be/02-create-account.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a3404a7e73fb6cce9ca58960682aa270/682be/03-create-account.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB10lEQVQoz21S2W7UMBTNH/GCVPHQqkjAA7+EEKioQAUSX8UvIIRUpmSSseM4i7N4yXZ67cxMGYqlI1/72ueeu0RP329xfp3g4mOC5zcMlzcZzq5SPPuQBDx5u8Xl5x1ef+OELODVV44XXzjOP3HycZxd57h49wMv33xHtIkZEpZjuxOoGoPeTpClQsoleF5hJ8pwp92MzownaD30inCnB0Tj4OCsAZYZYZkaRWmQiQJS5siFwC5N0ff96l+WFSdrf24kIm0M6lqhKAqotsPSFOhajV9/Cvy85dikNWKmwKSBVBPyekSuRohqQFbaPf8SKKdKIBqGAVVVQogMjuzFGSzTSAolbn/fkdoaXU+l0BbWjTB2pJ1KYBzZw170qnCuc0Rdr4PCqqphrVsjTVSvrqP7Cs65AGstDGXj4c89+Y3RjwlF5ZDwEnGaQ5R9KP40kQKt0bYtaqVC/cZxxDzPR4Q0/8KR0FI0RZ9U06Ah+I8TfRjc2iznKFXa/bt/SQ5EJ4ReiU/PRz04vW2HhcZhgeonCoD/rkeEvilam6DMq/QNCpNDQeI4weYuRpIyMMaRZRk4X3fG2AnZkbBTa5c9fKoHh6+doPmTUq7pWnNsyAGHOj6M5mrfA3GPPfUwzOCGAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="03 create account"
+        title="03 create account"
+        src="/static/a3404a7e73fb6cce9ca58960682aa270/799d3/03-create-account.png"
+        srcset="/static/a3404a7e73fb6cce9ca58960682aa270/00d96/03-create-account.png 148w,
+/static/a3404a7e73fb6cce9ca58960682aa270/0b23c/03-create-account.png 295w,
+/static/a3404a7e73fb6cce9ca58960682aa270/799d3/03-create-account.png 590w,
+/static/a3404a7e73fb6cce9ca58960682aa270/2a3d6/03-create-account.png 885w,
+/static/a3404a7e73fb6cce9ca58960682aa270/682be/03-create-account.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<ol start="4">
+<li>Create and download a key for the service account.</li>
+</ol>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/c069313c920adc367882da2334f0c29a/682be/07-service-accounts-keys.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB80lEQVQoz2WSyW7UQBCG/Ug5hSUCDiwH3igcQCIhigTKAZ4hEgckniEvgRSkURIvY3s83trtXuy2f6o8YyshJZVcblf9/9fd9g4+rPDsdI2j0wgvzmK8PE9xeJLg6ckaTz5HOPhI384SvL9I8eZrMn1/dZ7g7bcUz78kOKJ8/SPG4ae/eHd8Be/Pao1gvYEfpchKCal75MIizmrc+DFuwxRVY1Aah1r1KBuNuu1QSwtB71wLRUlPqTt4fd/BaIXB9QBGoNdo8hKVdLCGhssc1lHz9TW6IoexBuPQw9HcLsZ9UtC6p41BXdfI8wJlVQNWYxveYXVziziOEYcRtl0HdfEd+vLnTsI5jOMIt39OyXqyZsIeVVVhs0mhlKJVBy0F8qJA27ZEQjTU3N35UL9+Y5hAevRkYghmMhh3hENLgq2ibdUCZVlBaT05uWGYmu+7j7TmwpD8HAaqGcRa+1gwqyyitKJL2SDZCig7TqR8DEzIKaXc1SSg7xmx8CPBjtCZsCIBFunImekK2jILaaJmEl4zVHP/LDiLPRDkgaZppi3MoYkwz/NJlE3mgf9jORIiXS6FHXmLTMO3xiEaAd/3EdKZBUGwGHZEavc59z4wMApeSTc80wgalI1EvE0RkFhIv8wmyyBEsxzJkkJMRpyCar5Qjn/0ZDtFaZlCIgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="07 service accounts keys"
+        title="07 service accounts keys"
+        src="/static/c069313c920adc367882da2334f0c29a/799d3/07-service-accounts-keys.png"
+        srcset="/static/c069313c920adc367882da2334f0c29a/00d96/07-service-accounts-keys.png 148w,
+/static/c069313c920adc367882da2334f0c29a/0b23c/07-service-accounts-keys.png 295w,
+/static/c069313c920adc367882da2334f0c29a/799d3/07-service-accounts-keys.png 590w,
+/static/c069313c920adc367882da2334f0c29a/2a3d6/07-service-accounts-keys.png 885w,
+/static/c069313c920adc367882da2334f0c29a/682be/07-service-accounts-keys.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/91a96c2788fca3d2d4134c7b21a5ec5d/682be/08-make-a-key.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACEklEQVQoz3WSS2sUQRSF+z9lZZDExyIiuHflH9GFIjEhYsCFuHDnxj/hJqAbEWHiDGSGmSiZR3fXZKar34/q7s9bHSMa4oXTt/t0Vd1zzy1n48mEm7sLtl7MuLXvcufA58au13Gbz2dsPJ2zve/x4LXPziuf2wcedwX3Dn229ly29zx23rhsPhtx//ERzsnpgpmrmC4UK52SFjVBVOIuA36cLfg584nSkigzgoowKYglWy7OjbybPzmV7BhTURYZbVMDLZiCPFhSVmXHZWlMbWrZ0GCMkbW5LGuoa8N14eRFQRhGrFYrAh3Sljnam6HDUDbVckgth1cUpRQWdALKokNR2FxKvkBdN1ahQWuNUoosl+qiqsoS9EoxGAz43uvRPz5m0O/TH5zQG0zoD6eMTueMJxPG4zGj0YjhcEiSJDhpJopE2ToIyOTdRiFVtXyrpcLXgUDj+y7K9yQr5u6SKMmoKvNHpVVsxTlLXTL3NWdzhXcekZUtaZqhVprl1GX99RvB0SfU9BwvbDjXRWeB9fFaDyv5GUVR56OF9SjPK/wM9JcewcNHxO8/EHz8TJzWJHlL0/LfcArxzfZuB3AZVv5ivsBbr4nevkO/PCSaTbvbkMRRJ8C2acX8DXuGYz2I47gbjF1ko5IrY4fkeh6JnbYt0vHVb7/Kzq+raJrmouXLam3bdmRzpSfLy4P2CvcvLvhf2BQ1sUinyjoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="08 make a key"
+        title="08 make a key"
+        src="/static/91a96c2788fca3d2d4134c7b21a5ec5d/799d3/08-make-a-key.png"
+        srcset="/static/91a96c2788fca3d2d4134c7b21a5ec5d/00d96/08-make-a-key.png 148w,
+/static/91a96c2788fca3d2d4134c7b21a5ec5d/0b23c/08-make-a-key.png 295w,
+/static/91a96c2788fca3d2d4134c7b21a5ec5d/799d3/08-make-a-key.png 590w,
+/static/91a96c2788fca3d2d4134c7b21a5ec5d/2a3d6/08-make-a-key.png 885w,
+/static/91a96c2788fca3d2d4134c7b21a5ec5d/682be/08-make-a-key.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a88bbb60dc8d5ca584a3b3282b7824d9/682be/09-make-a-key.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACLklEQVQoz22SWW8SYRSG568YE7XauMWf4trWJSb+Cy9MvOWOtMoMwzLMDDNsU6A/wHinaIEKXloWQ0OEYbODbH0956sgF/2SN2e+hee85xykyw9lbGzJuL4tY3MniM2nKq48CeLaloKrj2VceiDjBp3fexnC7eequL/5TMWdFyFsbNN+R8WtV/T+kR9377+F9F5WIQfDpBCiMRNGPAHNsKGGNQSUEBQ1Is6WihnWSrppQ6cz/d+daSUgJRMJWFYcmXQKcdPEl8+fcNL6iUajjka9hmajgdrxD9Rrx2g2G3DdLrrdDkbDAYqHX2HbFvadDJxMmhhpSJZF2WIxoUBARvnoCP1+H61WC+12G26vh06ng18k13UxmUww9sbgVa1WEYlEkBCmLCSTSUi80TRNXITDIZRKJYxGIwEZDocCwJpOp+cw0un4HFgoFODz+bC3twu/3w+TKpTMeBwaO9R1AoZxWCyj4zLoDy5aZ4MBzk498f2Nqll3yFEKazY1XiNFsftOEUCPSupRqZ7nYUxuhOh7SpBZrQ4veyCAlUoFhmHAcRykqX8sybZt0T+2qygKyuWyeDybzYTm8/kqziny+v36DfDhI77T4HRqVyaT+Q9kq5yFNwzmrLwWi8WFJXP/BuSyVztBkUrWolExDDYmhsJAnfrHYpcMzufzq6zZbBa5XG4VuTyH7p38AZJr0+X+CSCTLRLHVIr+izQkdrpMsq5YbG1PbxjGSfl3y5L/AvUBvXkNhYsqAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="09 make a key"
+        title="09 make a key"
+        src="/static/a88bbb60dc8d5ca584a3b3282b7824d9/799d3/09-make-a-key.png"
+        srcset="/static/a88bbb60dc8d5ca584a3b3282b7824d9/00d96/09-make-a-key.png 148w,
+/static/a88bbb60dc8d5ca584a3b3282b7824d9/0b23c/09-make-a-key.png 295w,
+/static/a88bbb60dc8d5ca584a3b3282b7824d9/799d3/09-make-a-key.png 590w,
+/static/a88bbb60dc8d5ca584a3b3282b7824d9/2a3d6/09-make-a-key.png 885w,
+/static/a88bbb60dc8d5ca584a3b3282b7824d9/682be/09-make-a-key.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/859dccc887dc0c95c2de75f642fc95b9/682be/10-make-a-key.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACD0lEQVQoz41SyY7TQBD1t8BhNDAsc+BP0CBmYECIP+GYGxCUeI3Xttt2+IXcck4mjlHEhEhB2RUkFIYsCo/qTkAghKClp3qucr+uTbl+ouLwVMWNMxVHj3WCgYNTg3waDh5quHai4Sb57j0zcfeJiVvnJm6fGzh+auLwzMDRIwN3ntP/D17h+P4LKCXVgKpbErbHwKIYjhdBtxyUNBNl8vuMww9jaT0WIQi55AH5BH7EhF+JOUcYMnAeEThiz0bgVMAYQ8gCuI4tecVh8DwPruuABT583wOPQkR0N4k53larqKYplDCMYFkWarUa2u0cedYimyHP36HT6UgI/v7yEr1eT+LD3na7XfT7fdTrdflYkiSUYRxD0zQSaWOxWGA8mWCyx3w+x2w2w2g0xGazxt9Oo9FAoVCgSsNdhkKw1Wph83UhhcbjMYmMpBWYTqfyezgcYjAY7PkAHwcTfPq8xMXFBWzb3mVoexwviyoyKlec7XaL/z3b7Tdp8zynnvqoUh8VLkvWkWWZDC6XS6xWK6zXAut/4urqC5rNphycFBR1u64Ln5oqXgmCAI7jwDBNGJYJm7hVsaX9FQ7d0Q1DxipUrhhsFEU7QSEkehDQOkS0Oj6tSqVchFF6DVcvE3/zBzzyW6UiXK0E39LllDmPoQhVISp2MKU9SpIUKTW3msSEhHi8578j3cd/cipX3P8OIHm3aJfQqQcAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="10 make a key"
+        title="10 make a key"
+        src="/static/859dccc887dc0c95c2de75f642fc95b9/799d3/10-make-a-key.png"
+        srcset="/static/859dccc887dc0c95c2de75f642fc95b9/00d96/10-make-a-key.png 148w,
+/static/859dccc887dc0c95c2de75f642fc95b9/0b23c/10-make-a-key.png 295w,
+/static/859dccc887dc0c95c2de75f642fc95b9/799d3/10-make-a-key.png 590w,
+/static/859dccc887dc0c95c2de75f642fc95b9/2a3d6/10-make-a-key.png 885w,
+/static/859dccc887dc0c95c2de75f642fc95b9/682be/10-make-a-key.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<ol start="5">
+<li>Copy the key to your Python project directory.</li>
+</ol>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token function">mv</span> ~/Downloads/innate-mix-326900-6e64c607c722.json python-and-google-sheets/service_account.json</code></pre></div>
+<ol start="6">
+<li>Back on the Google Cloud dashboard, enable the Google Sheets API.</li>
+</ol>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/8bf7de68222b1c48e36b514198816707/682be/04-marketplace.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACOUlEQVQoz32Sy27TQBSG/TwsQKAihJCK+jYs2HbBoggKEvAOtMrFl/H97i4ACbGCPVKFVIgdpSFOkziunTZ2aH6OnSaCBVj6dP4Zz5w555/htvYH2H49xMM3McVKx9h63sedpyFu74W48STE3Wdd7Lzq4sGLLukI9/e72H4Z0ZoI92h8c6+HW7tfsbP7HtxwkqMfT5Dmc5zPSlwUS3yP+mgKMlqiCll3oFlH4BUPgupD1HyacyHKev1PkA3SJhTShu2BK4tL5OcplssrrL+43wOTBCgyg6rIFCWohMLEGtexEPgufO9vAp8SRlEXnShCr9PB2ecvGCVT/Ph2jFajAZ4X0OZ5NNsSGi1W0+QZNE2HYRjQdX1DNee6LrjpdIrBcIh0NEby6DHKj58wSKdUIVWkKFBVFYqqkV4hKyqYYkBSTEjULqsiUUXP88EV8zlSSpBME5Skr959QHxyQr4wWKYJ27YJCw5FjypwHQcOYdHYdT1Yll0fotKhJq3nZhcFkjRDUf7aePjz9BRvDw7RarchiCJ4QaQWTajUmkAHVZoXBBiUgDFGlcs1dcJsVmCSXpJ3M5RFWSccxgPoQgty8xBS4wCM0PgmLFmEozF4mgxHkeDoKoIggO/71K5XRy7PM4xGZ4gHA5TldULy1DYNBNXNXeO7To3nVNgrqjEl+hNuTr5lWY7FYrFpeTwe1/4ER0dUwYq6CsL/B5sKJ0mCHnk2nkyQ5Tny2QxhGNa3Wz2NNdWTWG/8H78B+RjAGB2XkLEAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="04 marketplace"
+        title="04 marketplace"
+        src="/static/8bf7de68222b1c48e36b514198816707/799d3/04-marketplace.png"
+        srcset="/static/8bf7de68222b1c48e36b514198816707/00d96/04-marketplace.png 148w,
+/static/8bf7de68222b1c48e36b514198816707/0b23c/04-marketplace.png 295w,
+/static/8bf7de68222b1c48e36b514198816707/799d3/04-marketplace.png 590w,
+/static/8bf7de68222b1c48e36b514198816707/2a3d6/04-marketplace.png 885w,
+/static/8bf7de68222b1c48e36b514198816707/682be/04-marketplace.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/c24a7ea8e576c2a865bcc3d46c84e136/682be/05-marketplace-search.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB8klEQVQoz32STYvTQBjH86UUD4K6IIIifhIvfgDRRVAru7oHTyJexZvgxfMqeFnwoLurbbrbJE3SpukkM0kmmXTy98kkWwpWH/gxL8zzf17msa4/C3H7VYS7BxHuvJzh1l6InUFI6ww39yNcfRri0mMfl3cDwu8JcOVJgBvPyXc/xLVBhJ3dU9x7dAhrFi0x8QJMgzmyQkFWGomQCOZLJLMYPJMQeUWUHUWFVBRgPIdUGnm5QkG0fu3Z0qsaVSkNjV7BWL/KwR7KN2837pqORndsMassS2R5jiyjiFKay7qukcsSiguUHz9BHZ+Y+0ZrNE1DoKf5C4tzjuUyRhzHRqg1pRQ8z0VeVV1yFLAxG90p/ces1lkIAZFlRlCTk6rV+kGzIaD7c/vmX5iSGWMoisKUXFEAULu+eD9xHDvIWIqp72MehKg9D4qy1uvSt5RcVSVa0YtMjCDZZ+8Ih+EPZHGCc2dCUxCA3X+A5P2Hi9S3l1xRxCRJOtH+Q9ogjBVIUxoZwWlNkfIUy3kERoJ8ZEPSO9lXtYnVjkEr1pax2bOHrxlevCMhFmJkj+E4DhbUmgV9XrqI19OwiSKsOUV1XJcySigLbhyESPH1KMa37zH99gQnp78wHI0wtm3YxGg8xu/hEOdnZ/BcB1OaCJ/665LOH6MINi3veYB0AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="05 marketplace search"
+        title="05 marketplace search"
+        src="/static/c24a7ea8e576c2a865bcc3d46c84e136/799d3/05-marketplace-search.png"
+        srcset="/static/c24a7ea8e576c2a865bcc3d46c84e136/00d96/05-marketplace-search.png 148w,
+/static/c24a7ea8e576c2a865bcc3d46c84e136/0b23c/05-marketplace-search.png 295w,
+/static/c24a7ea8e576c2a865bcc3d46c84e136/799d3/05-marketplace-search.png 590w,
+/static/c24a7ea8e576c2a865bcc3d46c84e136/2a3d6/05-marketplace-search.png 885w,
+/static/c24a7ea8e576c2a865bcc3d46c84e136/682be/05-marketplace-search.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ec156489e8eb8ce6cf6c99d916487434/682be/06-google-sheets.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABnUlEQVQoz42SuU7DQBCG/TxAgzgEAkHBI/AOPAAlAiEuhYKeColXQBR00ESiogWaCEiE1nHsOHa8Xu9h/8zaGAIKx8ifRx7v/J7Dzswew3LDJRhWj10sHTHM7TMsHlZM7zJMbDNMfmNqh2H+wMUK5c4e9LCw/YC1rSYcP5LgwgB0JeSFBlIFCILLHBFXvxLXnpISLuGALFIJLp5vIVKO56cWOu2XksD38D8rKjcMKsHXJMD6VQNeHKLn+ej1fERRBM5TaG1G0CV5nqMgjYJuJXlRSpqwWwnaoMoNHVQwckhiIYZxBCkl0jT9gHNeYoxBnVdjLR+GcEYD3sDgshmA9WmuqkCWmZ+bfM8ZFbUhp35B+rhu3uHk9AqtjU1k949QNoGq+Zr0WcA4K1sW0iCIFFKeIIl9DK5vkJ6dg/f7MNWwxoqOw9FaQVBrMdeQytDcFCR9RHoesiCApgUYWoRS6k/swhw7eNdl6BJCiHL4GSGpVU7PnKq2i7Dn/uJDsE+tBVSN/VXCMKy2SkLtdgftzisYc8sEW0Xtv1PFNd4ADzM7uj/ktEcAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="06 google sheets"
+        title="06 google sheets"
+        src="/static/ec156489e8eb8ce6cf6c99d916487434/799d3/06-google-sheets.png"
+        srcset="/static/ec156489e8eb8ce6cf6c99d916487434/00d96/06-google-sheets.png 148w,
+/static/ec156489e8eb8ce6cf6c99d916487434/0b23c/06-google-sheets.png 295w,
+/static/ec156489e8eb8ce6cf6c99d916487434/799d3/06-google-sheets.png 590w,
+/static/ec156489e8eb8ce6cf6c99d916487434/2a3d6/06-google-sheets.png 885w,
+/static/ec156489e8eb8ce6cf6c99d916487434/682be/06-google-sheets.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<ol start="7">
+<li>Open <code class="language-text">service_account.json</code> and copy the client email.</li>
+</ol>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/0c8d572bd5af158db64a33b1f6dd0906/682be/11-copy-client-email.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+UlEQVQoz22TSY7bQAxFfYwsGknD6EVa81Aq2bLlWB5kSdYsJZugkyx6kftf4IesUmcAsiBYJRceP8nv1Yf1I7JrhCT1sT/6OJ59bNMQMhFwhIQbRb/DDiWs4E/wnd9YgUD/ecLrz1esHtcPaFofbWvidPVQ3h10vUXfbOSFi+zs4Uzf+bc0CxAnIeJdiIiy2AqCRgSN4UWxAq+en99hnj0Mg4m2sxSM872yMY4mboWD08VbwK6KS+7icOJOAoQbQeolPLlR8NVHAk6Th6Yx0RNsGAnaksLGVvc3tXVto+NClIvSUYo/LVBf/gU0DA2811rZPJlKGZ85s9K2sXAttDIVpJJhGSk/ZD7ivYBIuOVItzyOWiErYGUMYmXjxGCttG60Sg4u1nemeqveUVdpJmD6UgNZ4TAYCth1BikylhEY6l7T+VZatDCL1NlIjy65gZbErjjxwnzIndQKDZOAtJSyopZpVuMkCBZRZUFFBAEF2j5CfpOoaomSoqikandH82PoNhUINrGe4frpAfcmoAcOVZP4+tLh248eL98HjF8mdPOkck+5GWd004x6GNQitGUW27wthY1dkw8vuUO+c1BRW6yWl8RnDj7vlRIdmz1vVhudIf/YZv30HpdC0Bzcxby+8pjyHW30nHvKh/wP2h0CJBScg/j/wF8BA3d//xERpgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="11 copy client email"
+        title="11 copy client email"
+        src="/static/0c8d572bd5af158db64a33b1f6dd0906/799d3/11-copy-client-email.png"
+        srcset="/static/0c8d572bd5af158db64a33b1f6dd0906/00d96/11-copy-client-email.png 148w,
+/static/0c8d572bd5af158db64a33b1f6dd0906/0b23c/11-copy-client-email.png 295w,
+/static/0c8d572bd5af158db64a33b1f6dd0906/799d3/11-copy-client-email.png 590w,
+/static/0c8d572bd5af158db64a33b1f6dd0906/2a3d6/11-copy-client-email.png 885w,
+/static/0c8d572bd5af158db64a33b1f6dd0906/682be/11-copy-client-email.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<ol start="8">
+<li>Open any Google Sheet that you want to use for this project, and share it with that email.</li>
+</ol>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d5fac068f157f31e50d8320a965c7130/682be/12-share-sheet-with-client.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACcElEQVQoz3WTS08TURiG+3fc+hfULYL23k47bemFhBWCVBOWJOIOCbGwMsSNl3JpGxL/gXiFKLT0irFlepleoJbSUn08M0hdcZIn72RO5v3e+b5zDGOSEYfkwG63Y7XZhF4+S5KEy+Uaqobb7daRZRmv14vX4+Wu5R437tzk9sgt7GYzBt+479+mh8nJSR4/ChMOh3k4O6vrzMyMrhrT09NMTU3xQOjV+9DEBG6PKCI8JLeMwSUqumQv941GXrx8xZcfoCgK1WqVcrmsa6VSQVVVBoMB/X6fXu9c0KPT6bC4+AzJKRHw+0Uoh2Yo4/MHMZmtvImu86v3h2OlTLmqUq3Vda0IamqDRuuUbu+CwR/oXQx0XV5exina4vd5kd0SBo+IGgqF9L5F374mq/TZzxQ5zOY5OMyTTBdIZgrsH+bI5krkCgrZo5+UKnXOegOWlpawid77RUK3Z/zSMBgMYbXa2NyIkq9Aoaii1mqXqBpVmvUm+/lPHBQ+o5QU0Y5jGnWVvd1dPuzsMD8/rw/Q4BHDCAaDOJ1OVlZXSWWPeP/1gL3vKVKpFEmNZJJsOk+6tEuxmaHT7qLW6ygVlXani7YikYiedGjocDhYW1ujUDgin8tQrZRpt09ptVqcnJzQaDbodnr0xW92u2eCc6qtLul8kY/fcjxZeKqHMsjCUOuhzWZlaytGpw/N9rmu/d9cu662ViLPxZQdBAIBfD7f/4SyOD4Lokpi+x3RzRjrm3GiGzFiMUE8RjweJ5FIDNmKxYkntpmbm0MLNTTUT7/TjsflxGk1YxwdwTQ2islkwmqxYLFYBZZr0b7XLoZ+e4ThX0TwfDKhnv1kAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="12 share sheet with client"
+        title="12 share sheet with client"
+        src="/static/d5fac068f157f31e50d8320a965c7130/799d3/12-share-sheet-with-client.png"
+        srcset="/static/d5fac068f157f31e50d8320a965c7130/00d96/12-share-sheet-with-client.png 148w,
+/static/d5fac068f157f31e50d8320a965c7130/0b23c/12-share-sheet-with-client.png 295w,
+/static/d5fac068f157f31e50d8320a965c7130/799d3/12-share-sheet-with-client.png 590w,
+/static/d5fac068f157f31e50d8320a965c7130/2a3d6/12-share-sheet-with-client.png 885w,
+/static/d5fac068f157f31e50d8320a965c7130/682be/12-share-sheet-with-client.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<ol start="9">
+<li>While you’re in the Sheet, copy the key. The key is the middle part of the share link between <code class="language-text">/d/</code> and <code class="language-text">/edit</code>.</li>
+</ol>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/cfd5ad1150c1908e350fd6a831db6acb/682be/13-copy-sheet-id.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACOUlEQVQoz32T204TURSG+zxe+wYkXppIamU67Rw7U55Aeyd3ygWXtoinNojigYcwMWqikVjaqfWmHVIKWKCGlp6g87lnQxtJ1Em+WXtW9v73v1bWRG4ko6jJBKqqSjRdRxeYpollWVNs256SSqVwXAfXcZlVoly5dpWZ6zPEYzEiVsqShycCruvKA5ODYT7lONN1eJlhGHJvmLNsC83UBQZJ3SCii5dhWsRuzbG8/JCtkkexWKRUKk0pl8tUKhW2t7fxfZ96vU6tVqPRaLC0tISmacKtg20liCQ1UZ7tEo0prK294OjokN3dPVqtFjs7Tfb29mk2mzLX6XQ4Pu7Q6/UZjUaETzabRU0kcCxRoZEUJQvr8/NpcUuSB9kcm16Nr9+KbHkeleoPPMEklivfKYu8J9yGjqvVKouLi7INjuinbjpETFFuOp1GjSusvnxL0YeDRp1B+wCGPeh3YXAi6Mrv8XhMMD5jHEiDok3LJITD897boaApHM4TVxRevX4DLZ/jzXeclD7SLwtKH2TsFd/T8T7zs+FzuOPT/tVlGISCuT8EU0SMiWA8zvr6Oqfi6t39fQ7abU4GI8GQbn/A8CwgNBUEIgZjsRpLh7nc3wRFyYpwuLGxITd1hnBR0T+fwqdTnn+BlZUVIaheFgx7GPby7sIChdU1Hj3J8yyfp1AoXCIvc3kZb997zJ37T8lkMnImnYtZjcgh1RLYuoauKijRWZSbUZQ5hbn/YCbjAoVwji3LPv8BhOBv3+xs7inFMkMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="13 copy sheet id"
+        title="13 copy sheet id"
+        src="/static/cfd5ad1150c1908e350fd6a831db6acb/799d3/13-copy-sheet-id.png"
+        srcset="/static/cfd5ad1150c1908e350fd6a831db6acb/00d96/13-copy-sheet-id.png 148w,
+/static/cfd5ad1150c1908e350fd6a831db6acb/0b23c/13-copy-sheet-id.png 295w,
+/static/cfd5ad1150c1908e350fd6a831db6acb/799d3/13-copy-sheet-id.png 590w,
+/static/cfd5ad1150c1908e350fd6a831db6acb/2a3d6/13-copy-sheet-id.png 885w,
+/static/cfd5ad1150c1908e350fd6a831db6acb/682be/13-copy-sheet-id.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<ol start="11">
+<li>Create variables in your Python script to store this key and the ID of the worksheet.</li>
+</ol>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">SHEET_KEY <span class="token operator">=</span> <span class="token string">'1xsb5NmB9OfqthMsoXGN_6bIE2CCRoN0eTQ_QvWu_-vk'</span>
+SHEET_ID <span class="token operator">=</span> <span class="token number">0</span></code></pre></div>
+<p><em>The ID of a worksheet is it’s numerical order within the larger sheet, starting with 0.</em></p>
+<ol start="12">
+<li>Download <a href="https://gist.github.com/isaiahnixon/69719181a4d86612a5db8329229811a0">google_sheets.py</a> and move it into the same directory as your Python script.</li>
+<li>From your script, import the methods defined in <code class="language-text">google_sheets.py</code>.</li>
+</ol>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> google_sheets <span class="token keyword">import</span> get_sheet<span class="token punctuation">,</span> set_sheet<span class="token punctuation">,</span> clear_sheet<span class="token punctuation">,</span> append_row_to_sheet</code></pre></div>
+<ol start="14">
+<li>Now you can use these methods, passing <code class="language-text">SHEET_KEY</code>, <code class="language-text">SHEET_ID</code>, and then a DataFrame or series to add to a DataFrame. Here’s an example implementation:</li>
+</ol>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> google_sheets <span class="token keyword">import</span> get_sheet<span class="token punctuation">,</span> set_sheet<span class="token punctuation">,</span> clear_sheet<span class="token punctuation">,</span> append_row_to_sheet
+
+SHEET_KEY <span class="token operator">=</span> <span class="token string">'1xsb5NmB9OfqthMsoXGN_6bIE2CCRoN0eTQ_QvWu_-vk'</span>
+SHEET_ID <span class="token operator">=</span> <span class="token number">0</span>
+
+data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Name'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token string">'nick'</span><span class="token punctuation">,</span> <span class="token string">'krish'</span><span class="token punctuation">,</span> <span class="token string">'jack'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">'Age'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+ 
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+
+set_sheet<span class="token punctuation">(</span>SHEET_KEY<span class="token punctuation">,</span> SHEET_ID<span class="token punctuation">,</span> df<span class="token punctuation">)</span></code></pre></div>
+<p>Run this script, and you can see the data appear on the Sheet.</p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">python3 example.py</code></pre></div>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4bd419678f4b3376bc0c9b5fce8c8022/682be/14-updated-data.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.32801595214357%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABOklEQVQoz6VTy07DMBDM5/IZfE5vfAQ3JC6UK0IlfZkmtWPH8SvusOumVaUeKHSl0cb2embWdqqX7RuWYoV68YW6riGlLOithXMOw+DgvUcIoWTGOI4okYHXzzkenh4xe57hY/6OyiUPa3vaeCTgjZz7nucGdF13JrIkwmJaa1haizHBxwA5KEhrIPYKVdtKiJ3EdrdH07QIMRKhP4MdOiYsDgMGEmMyBq+HEJFTRgpU069Q1WuBxbpFo8NE4kg5lrYukdLlOF/MJ4w5w2tyrgQ73KNTEqcwxpSiw+FQkKn4lhxJUJqISpv+SpmL/prZRKC2K0OEJ6V7wEfC51wc3kt2csoXWmltrlsY/9vy5JDjeAlTPo9vAJFhOrLiUCkFI9awzQZefsPuNvQtprfmfs38Lg39BF2ni8MfH5JZuT15lesAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="14 updated data"
+        title="14 updated data"
+        src="/static/4bd419678f4b3376bc0c9b5fce8c8022/799d3/14-updated-data.png"
+        srcset="/static/4bd419678f4b3376bc0c9b5fce8c8022/00d96/14-updated-data.png 148w,
+/static/4bd419678f4b3376bc0c9b5fce8c8022/0b23c/14-updated-data.png 295w,
+/static/4bd419678f4b3376bc0c9b5fce8c8022/799d3/14-updated-data.png 590w,
+/static/4bd419678f4b3376bc0c9b5fce8c8022/2a3d6/14-updated-data.png 885w,
+/static/4bd419678f4b3376bc0c9b5fce8c8022/682be/14-updated-data.png 1003w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h1>Conclusion</h1>
+<p>With these basic methods, built on the <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> model, you can work through almost any data storge need you might have. Plus, you have the added benefits of Google Sheets being cloud-based and human-readable by default. This easy setup and light Python module (29 lines of code total) together make up the most straightforward solution I could come up. I hope it can help you in your projects as well!  </p></section><hr style="margin-bottom:1.75rem"/><footer><div style="display:flex;margin-bottom:4.375rem"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;margin-right:0.875rem;margin-bottom:0;min-width:50px;border-radius:100%"><img src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAEEA//EABYBAQEBAAAAAAAAAAAAAAAAAAIBA//aAAwDAQACEAMQAAABz3v0CrcYx0zcCn//xAAbEAACAgMBAAAAAAAAAAAAAAABAgARAxIhBP/aAAgBAQABBQJnJGBX3rj49E8h6q2lmWZZn//EABYRAAMAAAAAAAAAAAAAAAAAABEgIf/aAAgBAwEBPwERP//EABYRAQEBAAAAAAAAAAAAAAAAABABEf/aAAgBAgEBPwHSH//EAB0QAAMAAAcAAAAAAAAAAAAAAAABEQIQIjFBUWH/2gAIAQEABj8ClnpLUxN8nZqFcOe5/8QAHBABAAIDAAMAAAAAAAAAAAAAAQARITFhQVFx/9oACAEBAAE/IcUCxQsorGalrykXQajIunol+B4pDaC15+zozozsn//aAAwDAQACAAMAAAAQ+8D+/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAExEBH/2gAIAQMBAT8QUHTo8//EABgRAQEAAwAAAAAAAAAAAAAAAAEAEBEx/9oACAECAQE/EAdMK23/xAAeEAEAAgICAwEAAAAAAAAAAAABABEhMWHxQXHR4f/aAAgBAQABPxAhmXDgupSDS6QnT6lQHwcZJW+JnAZWm9VHPGvUUn4kO0kWqTKBfad1Own/2Q==" alt="Isaiah Nixon" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/static/cae95c7a84596e302d14e6c4b1fa8225/30d3a/profile-pic.jpg 1x,
+/static/cae95c7a84596e302d14e6c4b1fa8225/66c95/profile-pic.jpg 1.5x,
+/static/cae95c7a84596e302d14e6c4b1fa8225/aacbd/profile-pic.jpg 2x" /><img loading="lazy" width="50" height="50" srcset="/static/cae95c7a84596e302d14e6c4b1fa8225/30d3a/profile-pic.jpg 1x,
+/static/cae95c7a84596e302d14e6c4b1fa8225/66c95/profile-pic.jpg 1.5x,
+/static/cae95c7a84596e302d14e6c4b1fa8225/aacbd/profile-pic.jpg 2x" src="/static/cae95c7a84596e302d14e6c4b1fa8225/30d3a/profile-pic.jpg" alt="Isaiah Nixon" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><p>Written by <strong>Isaiah Nixon</strong>.<br/><span style="white-space:nowrap"><a href="https://twitter.com/IsaiahNixon5" title="Twitter" style="width:30px;height:30px;box-shadow:none;display:inline-block;margin-bottom:-10px"><img style="height:auto;padding:undefined" alt="Twitter" src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png"/></a><a href="https://github.com/isaiahnixon" title="GitHub" style="width:30px;height:30px;box-shadow:none;display:inline-block;margin-bottom:-10px"><img style="height:auto;padding:undefined" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/></a><a href="https://drupal.stackexchange.com/users/82623" title="Drupal Answers" style="width:30px;height:30px;box-shadow:none;display:inline-block;margin-bottom:-10px"><img style="height:auto;padding:1px" alt="Drupal Answers" src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/se/se-icon.svg?v=62f619494ccd"/></a><a href="https://www.drupal.org/u/isaiah-nixon" title="Drupal.org" style="width:30px;height:30px;box-shadow:none;display:inline-block;margin-bottom:-10px"><img style="height:auto;padding:5px" alt="Drupal.org" src="https://www.drupal.org/files/druplicon-small.png"/></a><a href="https://www.linkedin.com/in/isaiah-nixon" title="LinkedIn" style="width:30px;height:30px;box-shadow:none;display:inline-block;margin-bottom:-10px"><img style="height:auto;padding:4px" alt="LinkedIn" src="https://image.flaticon.com/icons/png/512/174/174857.png"/></a></span></p></div></footer></article><nav><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/crypto-metrics-i-track/">← <!-- -->Crypto Metrics That I Use to Make Investments</a></li><li></li></ul></nav></main><footer>© <!-- -->2021<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.org">Gatsby</a></footer></div></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-127664101-3', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/sheets-and-python/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-7324245c78eed8ea11f1.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-328a2b7c20aa4ad52a6f.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-a6d09b3317a3b5b22ffd.js"],"component---src-pages-404-js":["/component---src-pages-404-js-31a64aa4d0648eac1c8c.js"],"component---src-pages-index-js":["/component---src-pages-index-js-366620aacd90157c8779.js"]};/*]]>*/</script><script src="/webpack-runtime-7b86c65304bbe4ce7b86.js" async=""></script><script src="/styles-7abe7a3cd8529a6be7e9.js" async=""></script><script src="/app-7324245c78eed8ea11f1.js" async=""></script><script src="/commons-5f621f75975b05874da0.js" async=""></script><script src="/component---src-templates-blog-post-js-a6d09b3317a3b5b22ffd.js" async=""></script></body></html>
