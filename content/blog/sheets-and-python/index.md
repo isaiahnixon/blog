@@ -6,7 +6,7 @@ description: Centralized and human-readable data from a Python script, without b
 
 # The Problem
 
-You need somewhere centralized, accessible, and visually digestible to store data that you're processing or collection with a Python script.
+You need somewhere centralized and human-readable to store data that you're processing or collecting with a Python script.
 
 
 # The Solution
